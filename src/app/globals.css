@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Karbin Motors landing palette */
+  --brand-carbon: #111111;
+  --brand-carbon-main: #2c2c2c;
+  --brand-accent: #cc1f1f;
+  --brand-accent-hover: #b01818;
+  --brand-accent-vibrant: #e22e2e;
+  --brand-background: #f5f4f0;
+  --brand-card: #ffffff;
+  --brand-muted: #b0ada5;
+  --brand-border: #e0ded8;
+
+  --background: var(--brand-background);
+  --foreground: var(--brand-carbon);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-brand-carbon: var(--brand-carbon);
+  --color-brand-carbon-main: var(--brand-carbon-main);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-hover: var(--brand-accent-hover);
+  --color-brand-accent-vibrant: var(--brand-accent-vibrant);
+  --color-brand-background: var(--brand-background);
+  --color-brand-card: var(--brand-card);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-border: var(--brand-border);
+  --font-sans: var(--font-inter);
+  --font-body: var(--font-inter);
+  --font-display: var(--font-barlow);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --text-hero: clamp(3rem, 5vw, 3.5rem);
+  --text-hero--line-height: 1.05;
+  --text-hero--font-weight: 800;
+
+  --text-section: 2rem;
+  --text-section--line-height: 1.15;
+  --text-section--font-weight: 700;
+
+  --text-card-title: 1.25rem;
+  --text-card-title--line-height: 1.25;
+  --text-card-title--font-weight: 700;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+  --text-body--font-weight: 400;
+
+  --text-secondary: 0.875rem;
+  --text-secondary--line-height: 1.5;
+  --text-secondary--font-weight: 400;
+
+  --text-cta: 0.875rem;
+  --text-cta--line-height: 1.2;
+  --text-cta--font-weight: 700;
+
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.2;
+  --text-label--font-weight: 500;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .section-rise {
+    animation: sectionRise 820ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .floating-part {
+    animation: floatingPart 4200ms ease-in-out infinite;
+  }
+
+  .accent-line {
+    transform-origin: left;
+    animation: accentLine 1200ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+}
+
+.cut-card {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%
+  );
+}
+
+@keyframes sectionRise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatingPart {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes accentLine {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
 }
