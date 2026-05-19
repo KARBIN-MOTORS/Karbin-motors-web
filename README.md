@@ -4,7 +4,7 @@ Plataforma web de alto rendimiento para **Karbin Motors S.A.C.**, una empresa es
 
 ---
 
-## 🛠️ Tecnologías Principales
+## Tecnologías Principales
 
 - **Frontend**: [Next.js](https://nextjs.org/) (App Router) con soporte de compilación estática (SSG).
 - **Estilos**: Vanilla CSS con variables CSS personalizadas y utilidades de diseño brutalista (sin dependencias innecesarias de frameworks de CSS para máximo control de rendimiento).
@@ -13,7 +13,7 @@ Plataforma web de alto rendimiento para **Karbin Motors S.A.C.**, una empresa es
 
 ---
 
-## 📂 Arquitectura de Directorios
+## Arquitectura de Directorios
 
 El proyecto sigue una estructura limpia, escalable y modular organizada por dominios técnicos:
 
@@ -35,7 +35,7 @@ El proyecto sigue una estructura limpia, escalable y modular organizada por domi
 
 ---
 
-## ⚡ Características Clave
+## Características Clave
 
 1. **Catálogo de Repuestos Autónomo**:
    - Buscador por texto con soporte difuso.
@@ -54,7 +54,7 @@ El proyecto sigue una estructura limpia, escalable y modular organizada por domi
 
 ---
 
-## 🚀 Guía de Desarrollo
+## Guía de Desarrollo
 
 ### Requisitos Previos
 
@@ -95,7 +95,7 @@ pnpm build
 
 ---
 
-## 🧹 Herramientas de Calidad
+## Herramientas de Calidad
 
 El proyecto utiliza **Biome** para mantener el código limpio y libre de errores.
 
@@ -107,21 +107,3 @@ El proyecto utiliza **Biome** para mantener el código limpio y libre de errores
   ```bash
   npx biome check --write src/
   ```
-
----
-
-## 📦 Script de Generación del Catálogo
-
-Las imágenes agregadas a la carpeta `public/repuestos/` se procesan automáticamente para generar la base de datos limpia de productos sin duplicados.
-
-Para regenerar el archivo `products.json`:
-
-```bash
-node .agents/scratch/generate-products-json.js
-```
-
-Este script realiza de manera automatizada:
-- Limpieza de nombres eliminando prefijos de ordenación (`10.-`, `12-_`) y extensiones.
-- Normalización de palabras clave industriales en mayúsculas (`LED`, `MTF`, `60V`, `20Ah`).
-- Corrección de tipografías e inyección de categorías basadas en el contexto del archivo.
-- Eliminación de imágenes duplicadas/copias.
