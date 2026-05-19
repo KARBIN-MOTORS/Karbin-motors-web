@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  /* Karbin Motors landing palette */
-  --brand-carbon: #111111;
-  --brand-carbon-main: #2c2c2c;
-  --brand-accent: #cc1f1f;
-  --brand-accent-hover: #b01818;
-  --brand-accent-vibrant: #e22e2e;
-  --brand-background: #f5f4f0;
-  --brand-card: #ffffff;
-  --brand-muted: #b0ada5;
-  --brand-border: #e0ded8;
+  /* Karbin Motors landing palette - Modern Industrial Dark */
+  --brand-carbon: #ffffff;
+  --brand-carbon-main: #a3a3a3;
+  --brand-accent: #f02d2d;
+  --brand-accent-hover: #ff4a4a;
+  --brand-accent-vibrant: #ff0000;
+  --brand-background: #050505;
+  --brand-card: #111111;
+  --brand-muted: #525252;
+  --brand-border: #262626;
 
   --background: var(--brand-background);
   --foreground: var(--brand-carbon);
@@ -32,17 +32,20 @@
   --font-body: var(--font-inter);
   --font-display: var(--font-barlow);
 
-  --text-hero: clamp(3rem, 5vw, 3.5rem);
-  --text-hero--line-height: 1.05;
-  --text-hero--font-weight: 800;
+  --text-hero: clamp(3.5rem, 8vw, 6rem);
+  --text-hero--line-height: 0.95;
+  --text-hero--font-weight: 900;
+  --text-hero--letter-spacing: -0.04em;
 
-  --text-section: 2rem;
-  --text-section--line-height: 1.15;
-  --text-section--font-weight: 700;
+  --text-section: clamp(2rem, 5vw, 3.5rem);
+  --text-section--line-height: 1.05;
+  --text-section--font-weight: 800;
+  --text-section--letter-spacing: -0.02em;
 
-  --text-card-title: 1.25rem;
-  --text-card-title--line-height: 1.25;
+  --text-card-title: 1.5rem;
+  --text-card-title--line-height: 1.2;
   --text-card-title--font-weight: 700;
+  --text-card-title--letter-spacing: -0.01em;
 
   --text-body: 1rem;
   --text-body--line-height: 1.6;
@@ -55,30 +58,55 @@
   --text-cta: 0.875rem;
   --text-cta--line-height: 1.2;
   --text-cta--font-weight: 700;
+  --text-cta--letter-spacing: 0.05em;
 
   --text-label: 0.75rem;
   --text-label--line-height: 1.2;
   --text-label--font-weight: 500;
+  --text-label--letter-spacing: 0.1em;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Brutalist details */
+::selection {
+  background: var(--brand-accent);
+  color: #fff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--brand-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-border);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-muted);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .section-rise {
-    animation: sectionRise 820ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation: sectionRise 1000ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .floating-part {
-    animation: floatingPart 4200ms ease-in-out infinite;
+    animation: floatingPart 5000ms ease-in-out infinite;
   }
 
   .accent-line {
     transform-origin: left;
-    animation: accentLine 1200ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation: accentLine 1200ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 }
 
@@ -86,16 +114,59 @@ body {
   clip-path: polygon(
     0 0,
     100% 0,
-    100% calc(100% - 30px),
-    calc(100% - 30px) 100%,
+    100% calc(100% - 24px),
+    calc(100% - 24px) 100%,
     0 100%
   );
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cut-card:hover {
+  box-shadow: 0 12px 24px -8px rgba(240, 45, 45, 0.2);
+}
+
+.cut-button {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    0 100%
+  );
+}
+
+/* Utility classes for aesthetic */
+.glass-panel {
+  background: rgba(5, 5, 5, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grid-bg {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-grid-pattern {
+  background-size: 24px 24px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(240, 45, 45, 0.5);
 }
 
 @keyframes sectionRise {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(40px);
   }
 
   to {
@@ -107,11 +178,11 @@ body {
 @keyframes floatingPart {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(0deg);
   }
 
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-16px) rotate(2deg);
   }
 }
 

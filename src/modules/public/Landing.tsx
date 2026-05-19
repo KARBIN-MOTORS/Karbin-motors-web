@@ -29,15 +29,6 @@ export function Landing() {
       <Hero />
       <CategoriesSection />
       <FeaturedPartsSection />
-      <PartsAccessoriesSection />
-      <SupportSection />
-      <AdvantagesSection />
-      <AboutSection />
-      <PaymentsSection />
-      <TestimonialsSection />
-      <GuidesSection />
-      <FaqSection />
-      <TechnicalInfoSection />
       <FinalCtaSection />
       <Footer />
     </main>
