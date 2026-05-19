@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Karbin Motors — Plataforma Web Industrial
 
-## Getting Started
+Plataforma web de alto rendimiento para **Karbin Motors S.A.C.**, una empresa especializada en la venta y distribución de repuestos para motocargueros, furgonetas y trimotos en Ate, Lima. El proyecto cuenta con un diseño estético moderno de estilo **dark-brutalist industrial** y está optimizado para SEO técnico y conversiones directas a canales de atención (WhatsApp).
 
-First, run the development server:
+---
+
+## 🛠️ Tecnologías Principales
+
+- **Frontend**: [Next.js](https://nextjs.org/) (App Router) con soporte de compilación estática (SSG).
+- **Estilos**: Vanilla CSS con variables CSS personalizadas y utilidades de diseño brutalista (sin dependencias innecesarias de frameworks de CSS para máximo control de rendimiento).
+- **Calidad de Código**: [Biome](https://biomejs.dev/) para linting y formateo ultrarrápido.
+- **Base de Datos de Catálogo**: JSON estático pre-procesado (`products.json`) para cargas instantáneas sin lecturas de disco a tiempo de ejecución.
+
+---
+
+## 📂 Arquitectura de Directorios
+
+El proyecto sigue una estructura limpia, escalable y modular organizada por dominios técnicos:
+
+```text
+├── public/                 # Recursos públicos y assets del catálogo
+│   └── repuestos/          # Imágenes optimizadas de los repuestos
+├── src/
+│   ├── app/                # Enrutador de Next.js (layout, páginas estáticas y SEO)
+│   │   ├── nosotros/       # Sección institucional
+│   │   ├── productos/      # Catálogo e inventario interactivo
+│   │   └── page.tsx        # Página de inicio
+│   └── modules/            # Componentes, constantes y lógica reutilizable
+│       ├── products/       # Lógica del catálogo (galería, paginación, filtros)
+│       │   ├── components/ # Galería de productos, controles, buscador
+│       │   └── data/       # Base de datos estática (products.json)
+│       ├── public/         # Secciones comunes de páginas (Hero, Footer, Header)
+│       └── shared/         # Componentes transversales y utilidades (botones, hooks)
+```
+
+---
+
+## ⚡ Características Clave
+
+1. **Catálogo de Repuestos Autónomo**:
+   - Buscador por texto con soporte difuso.
+   - Paginación del lado del cliente optimizada a 12 ítems por página con reinicio de estado automático al buscar o cambiar de categoría.
+   - Clasificación inteligente de categorías en tiempo de generación: *Mecánicos*, *Eléctricos* y *Accesorios*.
+
+2. **Optimización de Rendimiento e Hidratación (LCP & SSR)**:
+   - Carga con prioridad (`priority={i < 4}`) para la primera fila de imágenes en la galería para optimizar el **Largest Contentful Paint (LCP)**.
+   - Soporte robusto contra discrepancias de hidratación en clientes que usan extensiones de navegador mediante el silenciado selectivo de warnings (`suppressHydrationWarning`).
+
+3. **Embudo de Conversión WhatsApp**:
+   - Integración directa con el canal de atención técnica mediante enlaces pre-formateados que envían la referencia exacta del repuesto consultado en tiempo real.
+
+4. **SEO Industrial**:
+   - Integración completa de metadatos únicos para cada página e inyección de datos estructurados **JSON-LD (Schema.org / AutoPartsStore)** con el RUC de la empresa para posicionamiento local.
+
+---
+
+## 🚀 Guía de Desarrollo
+
+### Requisitos Previos
+
+- Node.js (versión 18 o superior recomendada).
+- Gestor de paquetes `pnpm` o `npm`.
+
+### Instalación
+
+Clona el repositorio e instala las dependencias:
+
+```bash
+npm install
+# o
+pnpm install
+```
+
+### Ejecutar en Desarrollo
+
+Inicia el servidor local de desarrollo con recarga en caliente:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
+# o
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El sitio estará disponible en [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Compilar para Producción
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Genera un build optimizado y estático listo para producción:
 
-## Learn More
+```bash
+npm run build
+# o
+pnpm build
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧹 Herramientas de Calidad
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+El proyecto utiliza **Biome** para mantener el código limpio y libre de errores.
 
-## Deploy on Vercel
+- **Verificar formato y linting**:
+  ```bash
+  npx biome check src/
+  ```
+- **Aplicar soluciones y formatear archivos**:
+  ```bash
+  npx biome check --write src/
+  ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Script de Generación del Catálogo
+
+Las imágenes agregadas a la carpeta `public/repuestos/` se procesan automáticamente para generar la base de datos limpia de productos sin duplicados.
+
+Para regenerar el archivo `products.json`:
+
+```bash
+node .agents/scratch/generate-products-json.js
+```
+
+Este script realiza de manera automatizada:
+- Limpieza de nombres eliminando prefijos de ordenación (`10.-`, `12-_`) y extensiones.
+- Normalización de palabras clave industriales en mayúsculas (`LED`, `MTF`, `60V`, `20Ah`).
+- Corrección de tipografías e inyección de categorías basadas en el contexto del archivo.
+- Eliminación de imágenes duplicadas/copias.
