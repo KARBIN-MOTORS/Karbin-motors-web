@@ -1,0 +1,148 @@
+"use client";
+
+import Link from "next/link";
+import { useCallback, useEffect, useId, useState } from "react";
+import { whatsappHref } from "@/modules/shared/constants/whatsapp";
+import { CloseIcon, MenuIcon, PhoneIcon } from "@/modules/shared/icons";
+
+type NavLink = readonly [label: string, href: string];
+
+type SiteMobileMenuProps = {
+  navLinks: readonly NavLink[];
+};
+
+export function SiteMobileMenu({ navLinks }: SiteMobileMenuProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const menuId = useId();
+
+  const closeMenu = useCallback(() => setIsOpen(false), []);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+      return;
+    }
+
+    const timeout = window.setTimeout(() => setIsMounted(false), 240);
+    return () => window.clearTimeout(timeout);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isMounted) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [closeMenu, isMounted]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isOpen]);
+
+  return (
+    <div className="lg:hidden">
+      <button
+        className="relative grid h-11 w-11 place-items-center overflow-hidden rounded border border-neutral-200 text-neutral-950 transition hover:border-red-600 hover:bg-red-50 hover:text-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+        type="button"
+        aria-controls={menuId}
+        aria-expanded={isOpen}
+        aria-label={isOpen ? "Cerrar menu" : "Menu"}
+        onClick={() => setIsOpen((current) => !current)}
+      >
+        <MenuIcon
+          className={`absolute h-6 w-6 transition duration-200 ${
+            isOpen ? "scale-75 rotate-90 opacity-0" : "scale-100 opacity-100"
+          }`}
+        />
+        <CloseIcon
+          className={`absolute h-6 w-6 transition duration-200 ${
+            isOpen ? "scale-100 opacity-100" : "scale-75 -rotate-90 opacity-0"
+          }`}
+        />
+      </button>
+
+      {isMounted ? (
+        <div
+          className={`absolute inset-x-0 top-full z-40 ${
+            isOpen ? "mobile-menu-enter" : "mobile-menu-exit"
+          }`}
+        >
+          <button
+            type="button"
+            aria-label="Cerrar menu"
+            className={`absolute inset-x-0 top-0 h-[100dvh] bg-black/35 backdrop-blur-[2px] ${
+              isOpen
+                ? "mobile-menu-backdrop-enter"
+                : "mobile-menu-backdrop-exit"
+            }`}
+            onClick={closeMenu}
+          />
+          <nav
+            id={menuId}
+            aria-label="Menu movil"
+            className="relative mx-auto grid max-w-[1480px] gap-3 border-b border-neutral-200 bg-white px-5 py-5 shadow-2xl shadow-black/15"
+          >
+            <div className="mb-1 flex items-center justify-between gap-4 border-b border-neutral-200 pb-4">
+              <div>
+                <p className="font-display text-xs font-black uppercase tracking-[0.3em] text-red-600">
+                  Karbin Motors
+                </p>
+                <p className="mt-1 text-sm font-bold text-neutral-600">
+                  Repuestos y soporte especializado
+                </p>
+              </div>
+              <span className="rounded bg-emerald-50 px-3 py-1 text-xs font-black uppercase text-emerald-600">
+                Online
+              </span>
+            </div>
+            {navLinks.map(([label, href]) => (
+              <Link
+                key={label}
+                href={href}
+                onClick={closeMenu}
+                className="mobile-menu-item group flex min-h-12 items-center justify-between rounded border border-neutral-200 px-4 text-sm font-black uppercase text-neutral-950 transition hover:border-red-600 hover:bg-red-50 hover:text-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+              >
+                <span>{label}</span>
+                <span className="h-2 w-2 rounded-full bg-red-600 opacity-0 transition group-hover:opacity-100" />
+              </Link>
+            ))}
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noreferrer"
+              onClick={closeMenu}
+              className="mobile-menu-item mt-2 flex min-h-12 items-center justify-center rounded bg-red-600 px-4 text-sm font-black uppercase text-white shadow-lg shadow-red-600/20 transition hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+            >
+              Cotizar por WhatsApp
+            </a>
+            <a
+              href="tel:+51900438494"
+              onClick={closeMenu}
+              className="mobile-menu-item flex min-h-11 items-center justify-center gap-2 rounded border border-neutral-200 px-4 text-sm font-black text-neutral-950 transition hover:border-red-600 hover:bg-red-50 hover:text-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+            >
+              <PhoneIcon className="h-4 w-4" />
+              +51 900 438 494
+            </a>
+          </nav>
+        </div>
+      ) : null}
+    </div>
+  );
+}

@@ -1,19 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  /* Karbin Motors landing palette - Modern Industrial Dark */
-  --brand-carbon: #ffffff;
-  --brand-carbon-main: #a3a3a3;
-  --brand-accent: #f02d2d;
-  --brand-accent-hover: #ff4a4a;
-  --brand-accent-vibrant: #ff0000;
-  --brand-background: #050505;
-  --brand-card: #111111;
+  /* Karbin Motors ecommerce palette - clean automotive retail */
+  --brand-red: #dc2626;
+  --brand-red-hover: #b91c1c;
+  --brand-red-soft: #fef2f2;
+  --brand-black: #050505;
+  --brand-ink: #0a0a0a;
+  --brand-charcoal: #171717;
   --brand-muted: #525252;
-  --brand-border: #262626;
+  --brand-subtle: #a3a3a3;
+  --brand-line: #e5e5e5;
+  --brand-surface: #ffffff;
+  --brand-surface-soft: #fafafa;
+  --brand-success: #16a34a;
+  --brand-success-soft: #ecfdf5;
 
-  --background: var(--brand-background);
-  --foreground: var(--brand-carbon);
+  --brand-carbon: var(--brand-surface);
+  --brand-carbon-main: var(--brand-subtle);
+  --brand-accent: var(--brand-red);
+  --brand-accent-hover: var(--brand-red-hover);
+  --brand-accent-vibrant: #ef4444;
+  --brand-background: var(--brand-surface);
+  --brand-card: var(--brand-surface);
+  --brand-border: var(--brand-line);
+
+  --background: var(--brand-surface);
+  --foreground: var(--brand-ink);
 }
 
 @theme inline {
@@ -28,6 +41,18 @@
   --color-brand-card: var(--brand-card);
   --color-brand-muted: var(--brand-muted);
   --color-brand-border: var(--brand-border);
+  --color-brand-red: var(--brand-red);
+  --color-brand-red-hover: var(--brand-red-hover);
+  --color-brand-red-soft: var(--brand-red-soft);
+  --color-brand-black: var(--brand-black);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-charcoal: var(--brand-charcoal);
+  --color-brand-subtle: var(--brand-subtle);
+  --color-brand-line: var(--brand-line);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-surface-soft: var(--brand-surface-soft);
+  --color-brand-success: var(--brand-success);
+  --color-brand-success-soft: var(--brand-success-soft);
   --font-sans: var(--font-inter);
   --font-body: var(--font-inter);
   --font-display: var(--font-barlow);
@@ -35,17 +60,17 @@
   --text-hero: clamp(3.5rem, 8vw, 6rem);
   --text-hero--line-height: 0.95;
   --text-hero--font-weight: 900;
-  --text-hero--letter-spacing: -0.04em;
+  --text-hero--letter-spacing: 0;
 
   --text-section: clamp(2rem, 5vw, 3.5rem);
   --text-section--line-height: 1.05;
   --text-section--font-weight: 800;
-  --text-section--letter-spacing: -0.02em;
+  --text-section--letter-spacing: 0;
 
   --text-card-title: 1.5rem;
   --text-card-title--line-height: 1.2;
   --text-card-title--font-weight: 700;
-  --text-card-title--letter-spacing: -0.01em;
+  --text-card-title--letter-spacing: 0;
 
   --text-body: 1rem;
   --text-body--line-height: 1.6;
@@ -86,10 +111,10 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--brand-background);
+  background: var(--brand-surface-soft);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--brand-border);
+  background: var(--brand-line);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--brand-muted);
@@ -107,6 +132,54 @@ body {
   .accent-line {
     transform-origin: left;
     animation: accentLine 1200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .mobile-menu-enter {
+    animation: mobileMenuEnter 240ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .mobile-menu-exit {
+    animation: mobileMenuExit 180ms cubic-bezier(0.7, 0, 0.84, 0) both;
+  }
+
+  .mobile-menu-backdrop-enter {
+    animation: mobileMenuBackdropEnter 220ms ease-out both;
+  }
+
+  .mobile-menu-backdrop-exit {
+    animation: mobileMenuBackdropExit 160ms ease-in both;
+  }
+
+  .mobile-menu-item {
+    animation: mobileMenuItemEnter 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .mobile-menu-item:nth-of-type(1) {
+    animation-delay: 40ms;
+  }
+
+  .mobile-menu-item:nth-of-type(2) {
+    animation-delay: 70ms;
+  }
+
+  .mobile-menu-item:nth-of-type(3) {
+    animation-delay: 100ms;
+  }
+
+  .mobile-menu-item:nth-of-type(4) {
+    animation-delay: 130ms;
+  }
+
+  .mobile-menu-item:nth-of-type(5) {
+    animation-delay: 160ms;
+  }
+
+  .mobile-menu-item:nth-of-type(6) {
+    animation-delay: 190ms;
+  }
+
+  .mobile-menu-item:nth-of-type(7) {
+    animation-delay: 220ms;
   }
 }
 
@@ -193,5 +266,61 @@ body {
 
   to {
     transform: scaleX(1);
+  }
+}
+
+@keyframes mobileMenuEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobileMenuExit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes mobileMenuBackdropEnter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mobileMenuBackdropExit {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mobileMenuItemEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
