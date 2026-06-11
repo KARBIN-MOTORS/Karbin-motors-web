@@ -1,48 +1,41 @@
 import { ProductGallery } from "@/modules/products/components/ProductGallery";
 import products from "@/modules/products/data/products.json";
-import { FinalCtaSection } from "@/modules/public/components/FinalCtaSection";
-import { Footer } from "@/modules/public/components/Footer";
-import { Header } from "@/modules/public/components/Header";
+import { SiteFooter } from "@/modules/shared/components/SiteFooter";
+import { SiteHeader } from "@/modules/shared/components/SiteHeader";
 
 export const metadata = {
-  title: "Catálogo de Repuestos y Hardware | Karbin Motors",
+  title: "Catalogo de Repuestos | Karbin Motors",
   description:
-    "Explora nuestro catálogo completo de repuestos, componentes eléctricos y hardware para vehículos de trabajo pesado.",
+    "Explora el catalogo completo de repuestos, componentes electricos y piezas mecanicas disponibles en Karbin Motors.",
 };
 
 export default function ProductosPage() {
   return (
-    <main className="bg-brand-background font-body text-brand-carbon min-h-screen flex flex-col">
-      <Header />
+    <main className="min-h-screen bg-white font-body text-neutral-800">
+      <SiteHeader />
 
-      <section className="pt-32 pb-16 px-5 sm:px-8 lg:px-10 bg-brand-background border-b border-brand-border">
-        <div className="mx-auto w-full max-w-[1440px]">
-          <div className="mb-6 inline-flex items-center gap-3">
-            <span className="h-2 w-2 bg-brand-accent animate-pulse" />
-            <p className="font-display text-sm font-bold uppercase tracking-widest text-brand-accent">
-              Catálogo Industrial
-            </p>
-          </div>
-          <h1 className="font-display text-[3.5rem] font-black uppercase leading-[0.9] tracking-tight text-brand-carbon sm:text-[5.5rem]">
-            INVENTARIO <br />
-            <span className="text-brand-carbon-main">DE HARDWARE</span>
+      <section className="relative overflow-hidden border-b border-neutral-200 bg-[linear-gradient(100deg,#fff_0%,#fff_54%,#f4f4f4_54%,#f7f7f7_100%)]">
+        <div className="absolute right-[12%] top-0 h-full w-28 -skew-x-12 bg-red-600" />
+        <div className="relative mx-auto max-w-[1480px] px-5 py-16 lg:px-12">
+          <p className="text-sm font-black uppercase tracking-widest text-red-600">
+            Catalogo Karbin Motors
+          </p>
+          <h1 className="mt-4 max-w-3xl font-display text-5xl font-black uppercase leading-[0.92] tracking-tight text-neutral-950 sm:text-6xl">
+            Inventario de repuestos
           </h1>
-          <p className="mt-8 max-w-2xl font-sans text-lg leading-relaxed text-brand-muted">
-            Base de datos completa de repuestos, componentes eléctricos y piezas
-            mecánicas disponibles. Consulta compatibilidad enviando la
-            referencia al canal de atención.
+          <p className="mt-6 max-w-2xl text-base font-semibold leading-7 text-neutral-600">
+            Consulta repuestos mecanicos, electricos y accesorios disponibles.
+            Filtra por categoria o busca por nombre para cotizar al instante.
           </p>
         </div>
       </section>
 
-      <section className="relative z-0 px-5 py-16 sm:px-8 lg:px-10 flex-grow bg-brand-background grid-bg">
-        <div className="mx-auto w-full max-w-[1440px]">
+      <section className="px-5 py-12 lg:px-12">
+        <div className="mx-auto w-full max-w-[1480px]">
           <ProductGallery products={products} />
         </div>
       </section>
-
-      <FinalCtaSection />
-      <Footer />
+      <SiteFooter />
     </main>
   );
 }
