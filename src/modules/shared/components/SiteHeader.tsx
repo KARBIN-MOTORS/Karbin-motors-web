@@ -1,9 +1,17 @@
 import Link from "next/link";
 import { whatsappHref } from "@/modules/shared/constants/whatsapp";
-import { FacebookIcon, InstagramIcon, MenuIcon } from "@/modules/shared/icons";
+import { FacebookIcon, InstagramIcon } from "@/modules/shared/icons";
+import { SiteMobileMenu } from "./SiteMobileMenu";
 
 const facebookHref = "https://www.facebook.com/profile.php?id=61574322585057";
 const instagramHref = "https://www.instagram.com/karbinmotors/";
+const navLinks = [
+  ["Inicio", "/"],
+  ["Nosotros", "/nosotros"],
+  ["Productos", "/productos"],
+  ["Servicios", "/#servicios"],
+  ["Contacto", "/#contacto"],
+] as const;
 
 function SiteLogo({ inverse = false }: { inverse?: boolean }) {
   return (
@@ -32,31 +40,25 @@ function SiteLogo({ inverse = false }: { inverse?: boolean }) {
 }
 
 export function SiteHeader() {
-  const navLinks = [
-    ["Inicio", "/"],
-    ["Nosotros", "/nosotros"],
-    ["Productos", "/productos"],
-    ["Servicios", "/#servicios"],
-    ["Contacto", "/#contacto"],
-  ];
-
   return (
     <>
       <div className="bg-black text-white">
-        <div className="mx-auto flex h-10 max-w-[1480px] items-center justify-between px-5 text-[0.72rem] font-bold lg:px-12">
-          <div className="hidden items-center gap-8 md:flex">
+        <div className="mx-auto flex min-h-10 max-w-[1480px] items-center justify-between gap-4 px-5 py-2 text-[0.72rem] font-bold lg:px-12">
+          <div className="hidden min-w-0 items-center gap-8 lg:flex">
             <span>Envíos a todo el Perú</span>
             <span>Garantía en todos los productos</span>
             <span>Soporte técnico especializado</span>
           </div>
-          <div className="ml-auto flex items-center gap-5">
-            <span className="text-emerald-500">Online</span>
-            <a href="tel:+51900438494">+51 900 438 494</a>
+          <div className="ml-auto flex min-w-0 items-center gap-4 sm:gap-5">
+            <span className="shrink-0 text-emerald-500">Online</span>
+            <a className="whitespace-nowrap" href="tel:+51900438494">
+              +51 900 438 494
+            </a>
             <a
               href={facebookHref}
               target="_blank"
               rel="noreferrer"
-              className="transition hover:text-red-500"
+              className="shrink-0 transition hover:text-red-500"
               aria-label="Facebook de Karbin Motors"
             >
               <FacebookIcon className="h-4 w-4" />
@@ -65,7 +67,7 @@ export function SiteHeader() {
               href={instagramHref}
               target="_blank"
               rel="noreferrer"
-              className="transition hover:text-red-500"
+              className="shrink-0 transition hover:text-red-500"
               aria-label="Instagram de Karbin Motors"
             >
               <InstagramIcon className="h-4 w-4" />
@@ -97,13 +99,7 @@ export function SiteHeader() {
             >
               Cotizar por WhatsApp
             </a>
-            <button
-              className="grid h-10 w-10 place-items-center rounded text-neutral-900 transition hover:bg-neutral-100 hover:text-red-600 lg:hidden"
-              type="button"
-              aria-label="Menú"
-            >
-              <MenuIcon className="h-6 w-6" />
-            </button>
+            <SiteMobileMenu navLinks={navLinks} />
           </div>
         </div>
       </header>

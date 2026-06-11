@@ -11,21 +11,21 @@ export function HomeCategories() {
         actionLabel="Ver todas"
         actionHref="/productos"
       />
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {homeCategories.map((category, index) => (
           <Link
             key={category.name}
             href="/productos"
             className={`group relative min-h-[232px] overflow-hidden rounded-md border border-neutral-200 bg-white shadow-[0_12px_34px_rgba(0,0,0,0.07)] transition duration-300 hover:-translate-y-1 hover:border-red-600 hover:shadow-[0_18px_46px_rgba(220,38,38,0.16)] ${
-              index === 0 ? "lg:col-span-2" : ""
+              index === 0 ? "xl:col-span-2" : ""
             }`}
           >
             <div className="absolute inset-0 bg-[linear-gradient(112deg,#111_0%,#111_42%,#1b1b1b_42%,#0a0a0a_100%)]" />
-            <div className="absolute -right-12 -top-12 h-44 w-44 rounded-full bg-red-600/18 blur-2xl" />
-            <div className="absolute right-0 top-0 h-full w-24 -skew-x-12 bg-red-600 transition group-hover:w-32" />
+            <div className="absolute right-0 top-0 hidden h-28 w-28 rounded-full bg-red-600/18 blur-2xl sm:block sm:h-36 sm:w-36" />
+            <div className="absolute right-0 top-0 hidden h-full w-3 bg-red-600 transition group-hover:w-4 sm:block" />
             <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" />
 
-            <div className="relative z-10 flex min-h-[232px]">
+            <div className="relative z-10 flex min-h-[232px] min-w-0">
               <div className="flex min-w-0 flex-1 flex-col justify-between p-5 sm:p-6">
                 <div>
                   <div className="flex items-center gap-3">
@@ -36,10 +36,10 @@ export function HomeCategories() {
                       {category.count}
                     </span>
                   </div>
-                  <h3 className="mt-5 max-w-[15rem] font-display text-2xl font-black uppercase leading-none text-white">
+                  <h3 className="mt-5 max-w-[15rem] break-words font-display text-[1.35rem] font-black uppercase leading-none text-white sm:text-2xl">
                     {category.name}
                   </h3>
-                  <p className="mt-3 max-w-[18rem] text-xs font-semibold leading-5 text-white/68">
+                  <p className="mt-3 max-w-[18rem] text-xs font-semibold leading-5 text-white/80">
                     {category.detail}
                   </p>
                 </div>
@@ -51,7 +51,7 @@ export function HomeCategories() {
                 </p>
               </div>
 
-              <div className="relative hidden w-[42%] shrink-0 place-items-center sm:grid">
+              <div className="relative hidden w-[42%] shrink-0 place-items-center md:grid">
                 <div className="absolute inset-y-8 left-0 w-px bg-white/10" />
                 <img
                   src={category.image}

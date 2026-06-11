@@ -26,10 +26,10 @@ export function HomeServices() {
           ))}
         </div>
 
-        <div className="mt-8 grid overflow-hidden rounded-md bg-neutral-950 text-white lg:grid-cols-[2fr_1fr]">
+        <div className="mt-8 grid overflow-hidden rounded-md bg-neutral-950 text-white xl:grid-cols-[2fr_1fr]">
           <div className="grid grid-cols-2 divide-x divide-white/10 md:grid-cols-4">
             {stats.map(([value, label]) => (
-              <div key={label} className="p-7 text-center">
+              <div key={label} className="min-w-0 p-5 text-center sm:p-7">
                 <p className="font-display text-4xl font-black text-red-600">
                   {value}
                 </p>
@@ -39,8 +39,8 @@ export function HomeServices() {
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-between gap-5 bg-red-600 p-7">
-            <div>
+          <div className="flex flex-col items-stretch gap-5 bg-red-600 p-5 sm:p-7 md:flex-row md:items-center md:justify-between">
+            <div className="min-w-0">
               <p className="font-display text-xl font-black uppercase">
                 ¿Necesitas un repuesto?
               </p>
@@ -52,7 +52,7 @@ export function HomeServices() {
               href={whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="shrink-0 rounded bg-white px-5 py-3 text-xs font-black uppercase text-red-600"
+              className="inline-flex min-h-11 items-center justify-center rounded bg-white px-5 py-3 text-center text-xs font-black uppercase text-red-600 md:shrink-0"
             >
               Cotizar ahora
             </a>
