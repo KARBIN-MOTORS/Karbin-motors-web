@@ -7,10 +7,10 @@ export function AboutContact() {
       <div className="mx-auto grid max-w-[1480px] gap-8 px-5 py-14 lg:grid-cols-[1fr_1fr] lg:px-12">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.22em] text-red-500">
-            Atencion y garantia
+            Atención y garantía
           </p>
           <h2 className="mt-3 font-display text-4xl font-black uppercase leading-none">
-            Compra con respaldo y asesoria
+            Compra con respaldo y asesoría
           </h2>
           <p className="mt-5 max-w-2xl text-sm font-semibold leading-7 text-neutral-300">
             Atendemos online y presencialmente. Nuestro horario presencial es de
@@ -33,10 +33,10 @@ export function AboutContact() {
         <div className="flex flex-col items-start justify-between gap-5 rounded-md bg-red-600 p-7 sm:flex-row sm:items-center">
           <div>
             <h3 className="font-display text-2xl font-black uppercase">
-              Necesitas cotizar un repuesto?
+              ¿Necesitas cotizar un repuesto?
             </h3>
             <p className="mt-1 text-sm font-semibold text-white/85">
-              Envianos el modelo, medida o foto del repuesto y te orientamos.
+              Envíanos el modelo, medida o foto del repuesto y te orientamos.
             </p>
           </div>
           <a

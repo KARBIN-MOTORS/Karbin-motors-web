@@ -1,17 +1,34 @@
 import Link from "next/link";
 import { SiteLogo } from "@/modules/shared/components/SiteHeader";
+import { FacebookIcon, InstagramIcon } from "@/modules/shared/icons";
+
+const facebookHref = "https://www.facebook.com/profile.php?id=61574322585057";
+const instagramHref = "https://www.instagram.com/karbinmotors/";
 
 const footerColumns = [
-  ["Enlaces rapidos", "Inicio,Nosotros,Productos,Marcas,Servicios,Contacto"],
-  ["Categorias", "Motor,Frenos,Suspension,Electrico,Iluminacion,Accesorios"],
+  ["Enlaces rápidos", "Inicio,Nosotros,Productos,Marcas,Servicios,Contacto"],
+  ["Categorías", "Motor,Frenos,Suspensión,Eléctrico,Iluminación,Accesorios"],
   [
-    "Informacion",
-    "Envios y Entregas,Politicas de Garantia,Terminos y Condiciones",
+    "Información",
+    "Envíos y Entregas,Políticas de Garantía,Términos y Condiciones",
   ],
   [
     "Contacto",
-    "+51 900 438 494,ventas@karbinmotors.com,Cal. Londres 122, Ate",
+    "+51 900 438 494,ventas@karbinmotors.com,Calle Londres 122, Ate",
   ],
+];
+
+const socialLinks = [
+  {
+    label: "Facebook",
+    href: facebookHref,
+    Icon: FacebookIcon,
+  },
+  {
+    label: "Instagram",
+    href: instagramHref,
+    Icon: InstagramIcon,
+  },
 ];
 
 export function SiteFooter() {
@@ -21,9 +38,23 @@ export function SiteFooter() {
         <div>
           <SiteLogo inverse />
           <p className="mt-4 text-xs leading-6 text-neutral-400">
-            Repuestos de calidad para tu vehiculo. Calidad, garantia y el mejor
+            Repuestos de calidad para tu vehículo. Calidad, garantía y el mejor
             precio del mercado.
           </p>
+          <div className="mt-5 flex items-center gap-3">
+            {socialLinks.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="grid h-9 w-9 place-items-center rounded border border-white/10 text-neutral-300 transition hover:border-red-500 hover:text-red-500"
+                aria-label={`${label} de Karbin Motors`}
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
         </div>
         {footerColumns.map(([title, items]) => (
           <div key={title}>

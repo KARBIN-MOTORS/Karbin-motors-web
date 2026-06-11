@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { whatsappHref } from "@/modules/shared/constants/whatsapp";
 
 export type ProductCardProps = {
   name: string;
@@ -25,7 +24,7 @@ export function ProductCard({
   priority = false,
 }: ProductCardProps) {
   const quoteHref = `https://wa.me/51900438494?text=${encodeURIComponent(
-    `Hola Karbin Motors, solicito cotizacion y stock del repuesto: ${name}`,
+    `Hola Karbin Motors, solicito cotización y stock del repuesto: ${name}`,
   )}`;
 
   return (

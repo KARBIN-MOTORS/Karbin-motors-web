@@ -16,7 +16,7 @@ export function AboutHero() {
           <p className="mt-6 max-w-2xl text-base font-semibold leading-7 text-neutral-600">
             Nacimos como un proyecto familiar con una meta clara: crear una
             empresa seria en un mercado amplio y competitivo, ofreciendo buena
-            atencion, repuestos de calidad y una experiencia de compra
+            atención, repuestos de calidad y una experiencia de compra
             confiable.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -32,7 +32,7 @@ export function AboutHero() {
               href="/productos"
               className="inline-flex h-14 items-center justify-center rounded border border-neutral-300 bg-white px-8 text-sm font-black uppercase text-neutral-950 transition hover:border-red-600 hover:text-red-600"
             >
-              Ver catalogo
+              Ver catálogo
             </Link>
           </div>
         </div>
@@ -52,7 +52,7 @@ export function AboutHero() {
               Inicio del proyecto familiar
             </p>
             <p className="mt-3 max-w-md text-sm font-semibold leading-6 text-neutral-300">
-              Un desafio propio convertido en empresa formal para atender a
+              Un desafío propio convertido en empresa formal para atender a
               empresas, emprendedores, independientes y clientes particulares.
             </p>
           </div>

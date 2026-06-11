@@ -12,21 +12,21 @@ export function AboutStory() {
       <div className="space-y-5 text-sm font-semibold leading-7 text-neutral-600">
         <p>
           Karbin Motors surge al identificar que el mercado de repuestos para
-          vehiculos es amplio, necesario y exigente. Decidimos asumir el reto de
+          vehículos es amplio, necesario y exigente. Decidimos asumir el reto de
           construir una empresa propia, sabiendo que competir requiere
-          constancia, orden y una atencion seria.
+          constancia, orden y una atención seria.
         </p>
         <p>
           Nuestro objetivo es atender a todo tipo de cliente: empresas,
           emprendedores, trabajadores independientes y personas que necesitan
-          mantener su vehiculo operativo. Vendemos repuestos para
-          motocargueros, trimotos, autos, sistemas electricos, frenos,
-          suspension, motor y accesorios.
+          mantener su vehículo operativo. Vendemos repuestos para motocargueros,
+          trimotos, autos, sistemas eléctricos, frenos, suspensión, motor y
+          accesorios.
         </p>
         <p>
           Lo que buscamos destacar no es solo el producto, sino la forma de
           atender: dar confianza, responder con claridad y ofrecer calidad
-          profesional en cada cotizacion.
+          profesional en cada cotización.
         </p>
       </div>
     </section>

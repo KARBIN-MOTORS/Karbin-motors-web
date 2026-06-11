@@ -40,28 +40,28 @@ export const homeCategories = [
     image: "/repuestos/4-_BOMBA_DE_FRENO_POS-removebg-preview.png",
   },
   {
-    name: "Suspension y Direccion",
+    name: "Suspensión y Dirección",
     Icon: SuspensionIcon,
     count: "210+ productos",
     detail: "Muelles, bocamazas, amortiguadores y ejes.",
     image: "/repuestos/1-_MUELLE_ROJO_13_HOJAS_DE_LADO-removebg-preview.png",
   },
   {
-    name: "Sistema Electrico",
+    name: "Sistema Eléctrico",
     Icon: BatteryIcon,
     count: "260+ productos",
-    detail: "Baterias, cargadores, ramales y tableros.",
+    detail: "Baterías, cargadores, ramales y tableros.",
     image: "/repuestos/18.-CARGADOR_60V_58AH_CONEXIONES-removebg-preview.png",
   },
   {
-    name: "Iluminacion y Faros",
+    name: "Iluminación y Faros",
     Icon: LightIcon,
     count: "145+ productos",
     detail: "Faros LED, posteriores, focos y conexiones.",
     image: "/repuestos/16.-FARO CENTRAL LED PARA CARGUERO (3).png",
   },
   {
-    name: "Accesorios y Mas",
+    name: "Accesorios y Más",
     Icon: ToolIcon,
     count: "95+ productos",
     detail: "Herramientas, gatas y complementos de mantenimiento.",
@@ -86,7 +86,7 @@ export const featuredProducts = [
     image: "/repuestos/11.-_SUJETADOR_DEL_RUSTER-removebg-preview.png",
   },
   {
-    name: "Bateria 12V 60Ah",
+    name: "Batería 12V 60Ah",
     model: "Karbin Motors",
     price: "S/ 380.00",
     image: "/repuestos/18.-CARGADOR_60V_58AH_CONEXIONES-removebg-preview.png",
@@ -109,23 +109,23 @@ export const featuredProducts = [
 ];
 
 export const trustItems = [
-  { Icon: TruckIcon, title: "Envios a todo el Peru", text: "Rapido y seguro" },
+  { Icon: TruckIcon, title: "Envíos a todo el Perú", text: "Rápido y seguro" },
   {
     Icon: ShieldIcon,
-    title: "Garantia asegurada",
+    title: "Garantía asegurada",
     text: "Todos nuestros productos",
   },
   {
     Icon: HeadsetIcon,
     title: "Soporte especializado",
-    text: "Asesoria tecnica",
+    text: "Asesoría técnica",
   },
 ];
 
 export const serviceCards = [
   {
     Icon: TruckIcon,
-    title: "Importacion Directa",
+    title: "Importación directa",
     text: "Repuestos originales y alternativos de calidad",
   },
   {
@@ -135,18 +135,18 @@ export const serviceCards = [
   },
   {
     Icon: ShieldIcon,
-    title: "Garantia Total",
-    text: "Todos nuestros productos cuentan con garantia",
+    title: "Garantía total",
+    text: "Todos nuestros productos cuentan con garantía",
   },
   {
     Icon: CheckIcon,
     title: "Precios Competitivos",
-    text: "La mejor relacion calidad y precio del mercado",
+    text: "La mejor relación calidad y precio del mercado",
   },
 ];
 
 export const stats = [
-  ["10+", "Anos de experiencia"],
+  ["10+", "Años de experiencia"],
   ["25K+", "Clientes satisfechos"],
   ["50K+", "Productos vendidos"],
   ["24/7", "Soporte disponible"],

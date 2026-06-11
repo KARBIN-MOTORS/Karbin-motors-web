@@ -1,10 +1,17 @@
 import Link from "next/link";
-import { CartIcon, MenuIcon, SearchIcon } from "@/modules/shared/icons";
 import { whatsappHref } from "@/modules/shared/constants/whatsapp";
+import { FacebookIcon, InstagramIcon, MenuIcon } from "@/modules/shared/icons";
+
+const facebookHref = "https://www.facebook.com/profile.php?id=61574322585057";
+const instagramHref = "https://www.instagram.com/karbinmotors/";
 
 function SiteLogo({ inverse = false }: { inverse?: boolean }) {
   return (
-    <Link href="/" className="flex items-center gap-2" aria-label="Karbin Motors">
+    <Link
+      href="/"
+      className="flex items-center gap-2"
+      aria-label="Karbin Motors"
+    >
       <span className="font-display text-3xl font-black leading-none tracking-tighter text-red-600">
         KM
       </span>
@@ -29,7 +36,6 @@ export function SiteHeader() {
     ["Inicio", "/"],
     ["Nosotros", "/nosotros"],
     ["Productos", "/productos"],
-    ["Marcas", "/#marcas"],
     ["Servicios", "/#servicios"],
     ["Contacto", "/#contacto"],
   ];
@@ -39,15 +45,31 @@ export function SiteHeader() {
       <div className="bg-black text-white">
         <div className="mx-auto flex h-10 max-w-[1480px] items-center justify-between px-5 text-[0.72rem] font-bold lg:px-12">
           <div className="hidden items-center gap-8 md:flex">
-            <span>Envios a todo el Peru</span>
-            <span>Garantia en todos los productos</span>
-            <span>Soporte tecnico especializado</span>
+            <span>Envíos a todo el Perú</span>
+            <span>Garantía en todos los productos</span>
+            <span>Soporte técnico especializado</span>
           </div>
           <div className="ml-auto flex items-center gap-5">
             <span className="text-emerald-500">Online</span>
             <a href="tel:+51900438494">+51 900 438 494</a>
-            <span>f</span>
-            <span>ig</span>
+            <a
+              href={facebookHref}
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-red-500"
+              aria-label="Facebook de Karbin Motors"
+            >
+              <FacebookIcon className="h-4 w-4" />
+            </a>
+            <a
+              href={instagramHref}
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-red-500"
+              aria-label="Instagram de Karbin Motors"
+            >
+              <InstagramIcon className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </div>
@@ -67,23 +89,6 @@ export function SiteHeader() {
             ))}
           </nav>
           <div className="ml-auto flex items-center gap-4">
-            <button
-              className="hidden h-10 w-10 place-items-center rounded text-neutral-700 transition hover:bg-neutral-100 hover:text-red-600 sm:grid"
-              type="button"
-              aria-label="Buscar"
-            >
-              <SearchIcon className="h-5 w-5" />
-            </button>
-            <button
-              className="relative hidden h-10 w-10 place-items-center rounded text-neutral-700 transition hover:bg-neutral-100 hover:text-red-600 sm:grid"
-              type="button"
-              aria-label="Carrito"
-            >
-              <CartIcon className="h-5 w-5" />
-              <span className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full bg-red-600 text-[0.6rem] font-black text-white">
-                2
-              </span>
-            </button>
             <a
               href={whatsappHref}
               target="_blank"
@@ -95,7 +100,7 @@ export function SiteHeader() {
             <button
               className="grid h-10 w-10 place-items-center rounded text-neutral-900 transition hover:bg-neutral-100 hover:text-red-600 lg:hidden"
               type="button"
-              aria-label="Menu"
+              aria-label="Menú"
             >
               <MenuIcon className="h-6 w-6" />
             </button>

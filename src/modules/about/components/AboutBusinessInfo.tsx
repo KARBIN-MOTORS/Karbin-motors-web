@@ -9,11 +9,14 @@ export function AboutBusinessInfo() {
           Actividades comerciales
         </p>
         <h2 className="mt-3 font-display text-3xl font-black uppercase leading-none">
-          Repuestos, accesorios y soluciones para vehiculos
+          Repuestos, accesorios y soluciones para vehículos
         </h2>
         <div className="mt-7 grid gap-3">
           {businessActivities.map((item) => (
-            <p key={item} className="flex items-center gap-3 text-sm font-black">
+            <p
+              key={item}
+              className="flex items-center gap-3 text-sm font-black"
+            >
               <span className="grid h-5 w-5 place-items-center rounded-full bg-red-600 text-white">
                 <CheckIcon className="h-3 w-3" />
               </span>
@@ -28,7 +31,7 @@ export function AboutBusinessInfo() {
           Datos de empresa
         </p>
         <h2 className="mt-3 font-display text-3xl font-black uppercase text-neutral-950">
-          Informacion legal
+          Información legal
         </h2>
         <div className="mt-6 grid gap-px overflow-hidden rounded border border-neutral-200 bg-neutral-200 sm:grid-cols-2">
           {legalInfo.map(([label, value]) => (

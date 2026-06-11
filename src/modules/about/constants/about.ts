@@ -5,39 +5,39 @@ export const aboutValues = [
   ],
   [
     "Calidad profesional",
-    "Trabajamos con repuestos seleccionados y orientamos cada compra segun la necesidad real del vehiculo.",
+    "Trabajamos con repuestos seleccionados y orientamos cada compra según la necesidad real del vehículo.",
   ],
   [
-    "Buena atencion",
-    "Respondemos por canales online y presenciales, con asesoria antes de concretar la compra.",
+    "Buena atención",
+    "Respondemos por canales online y presenciales, con asesoría antes de concretar la compra.",
   ],
 ];
 
 export const legalInfo = [
   ["RUC", "20615669696"],
-  ["Razon social", "KARBIN MOTORS S.A.C."],
+  ["Razón social", "KARBIN MOTORS S.A.C."],
   ["Nombre comercial", "Karbin Motors"],
-  ["Tipo de empresa", "Sociedad Anonima Cerrada"],
-  ["Condicion", "Activo"],
+  ["Tipo de empresa", "Sociedad Anónima Cerrada"],
+  ["Condición", "Activo"],
   ["Inicio de actividades", "01 / Abril / 2026"],
-  ["Direccion legal", "Cal. Londres Nro. 122"],
-  ["Urbanizacion", "Portales de Javier Prado"],
+  ["Dirección legal", "Cal. Londres Nro. 122"],
+  ["Urbanización", "Portales de Javier Prado"],
   ["Distrito", "Ate, Lima"],
-  ["Pais", "Peru"],
+  ["País", "Perú"],
 ];
 
 export const businessActivities = [
   "Venta de partes, piezas y accesorios",
-  "Venta de vehiculos automotores",
-  "Venta, mantenimiento y reparacion de motocicletas",
+  "Venta de vehículos automotores",
+  "Venta, mantenimiento y reparación de motocicletas",
   "CIIU 50304",
 ];
 
 export const contactInfo = [
-  ["Telefono", "+51 900 438 494"],
+  ["Teléfono", "+51 900 438 494"],
   ["Horario presencial", "8:00 a.m. - 6:00 p.m."],
-  ["Atencion virtual", "24/7"],
-  ["Garantia", "3 meses"],
+  ["Atención virtual", "24/7"],
+  ["Garantía", "3 meses"],
   ["Modalidad", "Online y presencial"],
-  ["Direccion", "Cal. Londres Nro. 122, Ate"],
+  ["Dirección", "Cal. Londres Nro. 122, Ate"],
 ];

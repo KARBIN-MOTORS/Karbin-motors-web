@@ -7,10 +7,10 @@ export const localBusinessSchema = {
   url: "https://karbinmotors.pe",
   telephone: "+51900438494",
   description:
-    "Empresa peruana dedicada a la venta de partes, piezas y accesorios para vehiculos en Ate, Lima.",
+    "Empresa peruana dedicada a la venta de partes, piezas y accesorios para vehículos en Ate, Lima.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Cal. Londres 122, Urb. Portales de Javier Prado",
+    streetAddress: "Calle Londres 122, Urb. Portales de Javier Prado",
     addressLocality: "Ate",
     addressRegion: "Lima",
     addressCountry: "PE",

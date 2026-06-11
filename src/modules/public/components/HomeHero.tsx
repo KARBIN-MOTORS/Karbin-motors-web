@@ -13,11 +13,11 @@ export function HomeHero() {
           </p>
           <h1 className="mt-5 max-w-2xl font-display text-5xl font-black uppercase leading-[0.92] tracking-tight text-neutral-950 sm:text-6xl lg:text-7xl">
             Repuestos de calidad para{" "}
-            <span className="text-red-600">tu vehiculo</span>
+            <span className="text-red-600">tu vehículo</span>
           </h1>
           <p className="mt-6 max-w-xl text-base font-semibold leading-7 text-neutral-600">
             Contamos con una amplia variedad de repuestos originales y
-            alternativos para todo tipo de vehiculos. Calidad, garantia y el
+            alternativos para todo tipo de vehículos. Calidad, garantía y el
             mejor precio del mercado.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -25,7 +25,7 @@ export function HomeHero() {
               href="/productos"
               className="inline-flex h-14 min-w-44 items-center justify-center rounded bg-red-600 px-8 text-sm font-black uppercase text-white shadow-xl shadow-red-600/20 transition hover:bg-red-700"
             >
-              Ver catalogo
+              Ver catálogo
             </Link>
             <a
               href={whatsappHref}
@@ -67,7 +67,7 @@ export function HomeHero() {
           />
           <img
             src="/repuestos/18.-CARGADOR_60V_58AH_CONEXIONES-removebg-preview.png"
-            alt="Bateria Karbin Motors"
+            alt="Batería Karbin Motors"
             className="absolute bottom-[6%] right-[18%] z-30 max-h-56 object-contain drop-shadow-2xl"
           />
           <img

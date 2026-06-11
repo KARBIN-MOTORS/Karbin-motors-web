@@ -9,7 +9,7 @@ import { SiteHeader } from "@/modules/shared/components/SiteHeader";
 export const metadata = {
   title: "Nosotros | Karbin Motors S.A.C.",
   description:
-    "Conoce Karbin Motors S.A.C., empresa peruana dedicada a la venta de partes, piezas y accesorios para vehiculos en Ate, Lima.",
+    "Conoce Karbin Motors S.A.C., empresa peruana dedicada a la venta de partes, piezas y accesorios para vehículos en Ate, Lima.",
 };
 
 export default function NosotrosPage() {

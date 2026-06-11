@@ -13,17 +13,17 @@ type ProductGalleryProps = {
   products: Product[];
 };
 
-const CATEGORIES = ["Todos", "Electricos", "Mecanicos", "Accesorios"];
+const CATEGORIES = ["Todos", "Eléctricos", "Mecánicos", "Accesorios"];
 const ITEMS_PER_PAGE = 12;
 
 function normalize(value: string) {
   return value
-    .replace(/Ã©/g, "e")
-    .replace(/Ã¡/g, "a")
-    .replace(/Ã­/g, "i")
-    .replace(/Ã³/g, "o")
-    .replace(/Ãº/g, "u")
-    .replace(/Ã±/g, "n")
+    .replace(/\u00c3\u00a9|\u00c3\u0192\u00c2\u00a9/g, "e")
+    .replace(/\u00c3\u00a1|\u00c3\u0192\u00c2\u00a1/g, "a")
+    .replace(/\u00c3\u00ad|\u00c3\u0192\u00c2\u00ad/g, "i")
+    .replace(/\u00c3\u00b3|\u00c3\u0192\u00c2\u00b3/g, "o")
+    .replace(/\u00c3\u00ba|\u00c3\u0192\u00c2\u00ba/g, "u")
+    .replace(/\u00c3\u00b1|\u00c3\u0192\u00c2\u00b1/g, "n")
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");

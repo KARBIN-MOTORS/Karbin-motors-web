@@ -6,8 +6,8 @@ export function HomeCategories() {
   return (
     <section className="mx-auto max-w-[1480px] px-5 py-7 lg:px-12">
       <SectionTitle
-        eyebrow="Compra por linea"
-        title="Nuestras categorias"
+        eyebrow="Compra por línea"
+        title="Nuestras categorías"
         actionLabel="Ver todas"
         actionHref="/productos"
       />

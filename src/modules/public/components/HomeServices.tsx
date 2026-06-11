@@ -42,10 +42,10 @@ export function HomeServices() {
           <div className="flex items-center justify-between gap-5 bg-red-600 p-7">
             <div>
               <p className="font-display text-xl font-black uppercase">
-                Necesitas un repuesto?
+                ¿Necesitas un repuesto?
               </p>
               <p className="mt-1 text-xs font-semibold text-white/85">
-                Cotiza por WhatsApp y obten respuesta inmediata.
+                Cotiza por WhatsApp y obtén una respuesta inmediata.
               </p>
             </div>
             <a
