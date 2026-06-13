@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { whatsappHref } from "@/modules/shared/constants/whatsapp";
-import { FacebookIcon, InstagramIcon } from "@/modules/shared/icons";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  WhatsAppIcon,
+} from "@/modules/shared/icons";
 import { SiteMobileMenu } from "./SiteMobileMenu";
 
 const facebookHref = "https://www.facebook.com/profile.php?id=61574322585057";
@@ -50,8 +54,14 @@ export function SiteHeader() {
             <span>Soporte técnico especializado</span>
           </div>
           <div className="ml-auto flex min-w-0 items-center gap-4 sm:gap-5">
-            <span className="shrink-0 text-emerald-500">Online</span>
-            <a className="whitespace-nowrap" href="tel:+51900438494">
+            <a
+              className="inline-flex items-center gap-1.5 whitespace-nowrap transition hover:text-emerald-400"
+              href={whatsappHref}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp de Karbin Motors"
+            >
+              <WhatsAppIcon className="size-3.5" />
               +51 900 438 494
             </a>
             <a

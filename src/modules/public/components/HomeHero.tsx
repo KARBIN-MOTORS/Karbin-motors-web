@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { whatsappHref } from "@/modules/shared/constants/whatsapp";
 import { trustItems } from "../constants/home";
@@ -53,27 +54,18 @@ export function HomeHero() {
           </div>
         </div>
 
-        <div className="relative z-10 grid min-h-[300px] overflow-hidden place-items-center sm:min-h-[430px]">
-          <div className="absolute h-56 w-56 rounded-full bg-neutral-200 blur-3xl sm:h-72 sm:w-72" />
-          <img
-            src="/repuestos/4-_BOMBA_DE_FRENO_POS-removebg-preview.png"
+        <div className="relative z-10 grid min-h-[320px] overflow-hidden place-items-center sm:min-h-[460px] lg:min-h-[520px]">
+          <div className="absolute h-64 w-64 rounded-full bg-neutral-200 blur-3xl sm:h-80 sm:w-80" />
+          <div className="absolute inset-x-8 bottom-10 h-24 -skew-x-12 rounded bg-red-600/10 sm:bottom-16 sm:h-32" />
+          <div className="absolute right-4 top-8 h-28 w-28 rounded-full border border-red-600/20 sm:right-12 sm:h-40 sm:w-40" />
+          <Image
+            src="/karbin/hero-karbin.png"
             alt="Kit de repuestos Karbin Motors"
-            className="absolute left-[2%] top-[8%] z-20 max-h-32 rotate-[-12deg] object-contain drop-shadow-2xl sm:left-[6%] sm:max-h-52"
-          />
-          <img
-            src="/repuestos/16.-FARO CENTRAL LED PARA CARGUERO (3).png"
-            alt="Faro LED Karbin Motors"
-            className="absolute right-[2%] top-[18%] z-20 max-h-28 rotate-6 object-contain drop-shadow-2xl sm:right-[8%] sm:max-h-44"
-          />
-          <img
-            src="/repuestos/18.-CARGADOR_60V_58AH_CONEXIONES-removebg-preview.png"
-            alt="Batería Karbin Motors"
-            className="absolute bottom-[6%] right-[12%] z-30 max-h-36 object-contain drop-shadow-2xl sm:right-[18%] sm:max-h-56"
-          />
-          <img
-            src="/repuestos/10.-_EJE_CARDAN_COMPLETO-removebg-preview (1).png"
-            alt="Eje cardan Karbin Motors"
-            className="relative z-10 max-h-[280px] w-full object-contain drop-shadow-[0_28px_40px_rgba(0,0,0,0.28)] sm:max-h-[410px]"
+            width={1536}
+            height={1024}
+            priority
+            sizes="(min-width: 1024px) 52vw, 92vw"
+            className="relative z-20 w-full max-w-[420px] -rotate-6 object-contain drop-shadow-2xl sm:max-w-[620px] lg:max-w-[760px]"
           />
         </div>
       </div>

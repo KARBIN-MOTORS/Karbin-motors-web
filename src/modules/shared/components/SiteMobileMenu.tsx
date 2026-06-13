@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useId, useState } from "react";
 import { whatsappHref } from "@/modules/shared/constants/whatsapp";
-import { CloseIcon, MenuIcon, PhoneIcon } from "@/modules/shared/icons";
+import { CloseIcon, MenuIcon, WhatsAppIcon } from "@/modules/shared/icons";
 
 type NavLink = readonly [label: string, href: string];
 
@@ -108,9 +108,6 @@ export function SiteMobileMenu({ navLinks }: SiteMobileMenuProps) {
                   Repuestos y soporte especializado
                 </p>
               </div>
-              <span className="rounded bg-emerald-50 px-3 py-1 text-xs font-black uppercase text-emerald-600">
-                Online
-              </span>
             </div>
             {navLinks.map(([label, href]) => (
               <Link
@@ -128,17 +125,20 @@ export function SiteMobileMenu({ navLinks }: SiteMobileMenuProps) {
               target="_blank"
               rel="noreferrer"
               onClick={closeMenu}
-              className="mobile-menu-item mt-2 flex min-h-12 items-center justify-center rounded bg-red-600 px-4 text-sm font-black uppercase text-white shadow-lg shadow-red-600/20 transition hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+              className="mobile-menu-item mt-2 flex min-h-12 items-center justify-center gap-2 rounded bg-red-600 px-4 text-sm font-black uppercase text-white shadow-lg shadow-red-600/20 transition hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
             >
+              <WhatsAppIcon className="h-5 w-5" />
               Cotizar por WhatsApp
             </a>
             <a
-              href="tel:+51900438494"
+              href={whatsappHref}
+              target="_blank"
+              rel="noreferrer"
               onClick={closeMenu}
               className="mobile-menu-item flex min-h-11 items-center justify-center gap-2 rounded border border-neutral-200 px-4 text-sm font-black text-neutral-950 transition hover:border-red-600 hover:bg-red-50 hover:text-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
             >
-              <PhoneIcon className="h-4 w-4" />
-              +51 900 438 494
+              <WhatsAppIcon className="h-4 w-4" />
+              WhatsApp directo
             </a>
           </nav>
         </div>
