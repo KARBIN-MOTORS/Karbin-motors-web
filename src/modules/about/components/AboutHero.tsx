@@ -4,7 +4,7 @@ import { whatsappHref } from "@/modules/shared/constants/whatsapp";
 export function AboutHero() {
   return (
     <section className="relative overflow-hidden border-b border-neutral-200 bg-[linear-gradient(100deg,#fff_0%,#fff_52%,#f4f4f4_52%,#f7f7f7_100%)]">
-      <div className="absolute right-[12%] top-0 h-full w-32 -skew-x-12 bg-red-600" />
+      <div className="absolute right-[12%] top-0 hidden h-full w-32 -skew-x-12 bg-red-600 lg:block" />
       <div className="relative mx-auto grid min-h-[520px] max-w-[1480px] items-center gap-10 px-5 py-16 lg:grid-cols-[1fr_0.9fr] lg:px-12">
         <div>
           <p className="text-sm font-black uppercase tracking-widest text-red-600">

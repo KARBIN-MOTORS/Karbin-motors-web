@@ -15,7 +15,7 @@ export default function ProductosPage() {
       <SiteHeader />
 
       <section className="relative overflow-hidden border-b border-neutral-200 bg-[linear-gradient(100deg,#fff_0%,#fff_54%,#f4f4f4_54%,#f7f7f7_100%)]">
-        <div className="absolute right-[12%] top-0 h-full w-28 -skew-x-12 bg-red-600" />
+        <div className="absolute right-[12%] top-0 hidden h-full w-28 -skew-x-12 bg-red-600 lg:block" />
         <div className="relative mx-auto max-w-[1480px] px-5 py-16 lg:px-12">
           <p className="text-sm font-black uppercase tracking-widest text-red-600">
             Catálogo Karbin Motors

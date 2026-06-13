@@ -17,13 +17,7 @@ export const legalInfo = [
   ["RUC", "20615669696"],
   ["Razón social", "KARBIN MOTORS S.A.C."],
   ["Nombre comercial", "Karbin Motors"],
-  ["Tipo de empresa", "Sociedad Anónima Cerrada"],
-  ["Condición", "Activo"],
-  ["Inicio de actividades", "01 / Abril / 2026"],
   ["Dirección legal", "Cal. Londres Nro. 122"],
-  ["Urbanización", "Portales de Javier Prado"],
-  ["Distrito", "Ate, Lima"],
-  ["País", "Perú"],
 ];
 
 export const businessActivities = [
