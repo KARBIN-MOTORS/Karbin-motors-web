@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CheckIcon, PhoneIcon } from "@/modules/shared/icons";
 
@@ -15,18 +16,22 @@ export function HomeAboutPreview() {
       className="mx-auto grid max-w-[1480px] gap-10 px-5 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-12"
     >
       <div className="relative grid min-h-[360px] grid-cols-2 gap-4">
-        <div className="overflow-hidden rounded-md bg-neutral-200">
-          <img
+        <div className="relative overflow-hidden rounded-md bg-neutral-200">
+          <Image
             src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=700&q=85"
             alt="Mecánico revisando un vehículo en taller"
-            className="h-full w-full object-cover"
+            fill
+            sizes="(min-width: 1024px) 22vw, 45vw"
+            className="object-cover"
           />
         </div>
-        <div className="mt-10 overflow-hidden rounded-md bg-neutral-200">
-          <img
+        <div className="relative mt-10 overflow-hidden rounded-md bg-neutral-200">
+          <Image
             src="https://images.unsplash.com/photo-1581092919535-7146ff1a590b?auto=format&fit=crop&w=600&q=80"
             alt="Asesoría en repuestos"
-            className="h-full w-full object-cover"
+            fill
+            sizes="(min-width: 1024px) 22vw, 45vw"
+            className="object-cover"
           />
         </div>
         <div className="absolute bottom-6 left-1/2 rounded-md bg-red-600 px-7 py-5 text-white shadow-2xl">

@@ -5,6 +5,7 @@ import {
   InstagramIcon,
   WhatsAppIcon,
 } from "@/modules/shared/icons";
+import { SiteLogo } from "./SiteLogo";
 import { SiteMobileMenu } from "./SiteMobileMenu";
 
 const facebookHref = "https://www.facebook.com/profile.php?id=61574322585057";
@@ -16,32 +17,6 @@ const navLinks = [
   ["Servicios", "/#servicios"],
   ["Contacto", "/#contacto"],
 ] as const;
-
-function SiteLogo({ inverse = false }: { inverse?: boolean }) {
-  return (
-    <Link
-      href="/"
-      className="flex items-center gap-2"
-      aria-label="Karbin Motors"
-    >
-      <span className="font-display text-3xl font-black leading-none tracking-tighter text-red-600">
-        KM
-      </span>
-      <span className="grid gap-0.5 leading-none">
-        <span
-          className={`font-display text-xl font-black tracking-tight ${
-            inverse ? "text-white" : "text-neutral-950"
-          }`}
-        >
-          KARBIN
-        </span>
-        <span className="font-display text-[0.7rem] font-black tracking-[0.42em] text-red-600">
-          MOTORS
-        </span>
-      </span>
-    </Link>
-  );
-}
 
 export function SiteHeader() {
   return (
@@ -116,5 +91,3 @@ export function SiteHeader() {
     </>
   );
 }
-
-export { SiteLogo };

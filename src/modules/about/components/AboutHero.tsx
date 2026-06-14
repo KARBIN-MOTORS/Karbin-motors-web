@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { whatsappHref } from "@/modules/shared/constants/whatsapp";
 
@@ -38,10 +39,12 @@ export function AboutHero() {
         </div>
 
         <div className="relative min-h-[360px] overflow-hidden rounded-md bg-neutral-950 text-white shadow-2xl">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80"
             alt="Repuestos automotrices Karbin Motors"
-            className="absolute inset-0 h-full w-full object-cover opacity-55"
+            fill
+            sizes="(min-width: 1024px) 42vw, 90vw"
+            className="object-cover opacity-55"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
           <div className="relative z-10 flex min-h-[360px] flex-col justify-end p-7">

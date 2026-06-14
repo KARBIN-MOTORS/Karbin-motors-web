@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SiteLogo } from "@/modules/shared/components/SiteHeader";
+import { SiteLogo } from "@/modules/shared/components/SiteLogo";
 import { FacebookIcon, InstagramIcon } from "@/modules/shared/icons";
 
 const facebookHref = "https://www.facebook.com/profile.php?id=61574322585057";

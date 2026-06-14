@@ -55,9 +55,6 @@ export function HomeHero() {
         </div>
 
         <div className="relative z-10 grid min-h-[320px] overflow-hidden place-items-center sm:min-h-[460px] lg:min-h-[520px]">
-          <div className="absolute h-64 w-64 rounded-full bg-neutral-200 blur-3xl sm:h-80 sm:w-80" />
-          <div className="absolute inset-x-8 bottom-10 h-24 -skew-x-12 rounded bg-red-600/10 sm:bottom-16 sm:h-32" />
-          <div className="absolute right-4 top-8 h-28 w-28 rounded-full border border-red-600/20 sm:right-12 sm:h-40 sm:w-40" />
           <Image
             src="/karbin/hero-karbin.png"
             alt="Kit de repuestos Karbin Motors"

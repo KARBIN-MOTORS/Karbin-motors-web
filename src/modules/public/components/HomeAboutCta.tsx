@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { whatsappHref } from "@/modules/shared/constants/whatsapp";
 import { CheckIcon } from "@/modules/shared/icons";
@@ -29,11 +30,13 @@ export function HomeAboutCta() {
           </Link>
         </div>
 
-        <div className="min-h-64 overflow-hidden rounded-md bg-neutral-800">
-          <img
+        <div className="relative min-h-64 overflow-hidden rounded-md bg-neutral-800">
+          <Image
             src="/karbin/karbin-mecanico.png"
             alt="Tienda de repuestos Karbin Motors"
-            className="h-full w-full object-cover"
+            fill
+            sizes="(min-width: 1024px) 40vw, 90vw"
+            className="object-cover"
           />
         </div>
 
