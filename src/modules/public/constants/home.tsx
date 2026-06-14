@@ -24,50 +24,67 @@ export const brands = [
 	"Ford",
 ];
 
-export const homeCategories = [
-	{
-		name: "Repuestos de Motor",
+import type { ComponentType } from "react";
+import type { IconProps } from "@/modules/shared/icons/IconProps";
+
+export type CategoryVisual = {
+	Icon: ComponentType<IconProps>;
+	count: string;
+	detail: string;
+	image: string;
+};
+
+/**
+ * Visual enrichment for each Tina category.
+ * Key = category name as stored in TinaCMS (case-sensitive).
+ * Add an entry here whenever a new category is created in the CMS.
+ */
+export const categoryVisuals: Record<string, CategoryVisual> = {
+	"Repuestos de Motor": {
 		Icon: EngineIcon,
 		count: "320+ productos",
 		detail: "Filtros, soportes, bombas y piezas de alto desgaste.",
 		image: "/repuestos/10.-_EJE_CARDAN_COMPLETO-removebg-preview (1).png",
 	},
-	{
-		name: "Sistema de Frenos",
+	"Sistema de Frenos": {
 		Icon: BrakeIcon,
 		count: "180+ productos",
 		detail: "Bombas, zapatas, discos, pastillas y accesorios.",
 		image: "/repuestos/4-_BOMBA_DE_FRENO_POS-removebg-preview.png",
 	},
-	{
-		name: "Suspensión y Dirección",
+	"Suspensión y Dirección": {
 		Icon: SuspensionIcon,
 		count: "210+ productos",
 		detail: "Muelles, bocamazas, amortiguadores y ejes.",
 		image: "/repuestos/1-_MUELLE_ROJO_13_HOJAS_DE_LADO-removebg-preview.png",
 	},
-	{
-		name: "Sistema Eléctrico",
+	"Sistema Eléctrico": {
 		Icon: BatteryIcon,
 		count: "260+ productos",
 		detail: "Baterías, cargadores, ramales y tableros.",
 		image: "/repuestos/18.-CARGADOR_60V_58AH_CONEXIONES-removebg-preview.png",
 	},
-	{
-		name: "Iluminación y Faros",
+	"Iluminación y Faros": {
 		Icon: LightIcon,
 		count: "145+ productos",
 		detail: "Faros LED, posteriores, focos y conexiones.",
 		image: "/repuestos/16.-FARO CENTRAL LED PARA CARGUERO (3).png",
 	},
-	{
-		name: "Accesorios y Más",
+	"Accesorios y Más": {
 		Icon: ToolIcon,
 		count: "95+ productos",
 		detail: "Herramientas, gatas y complementos de mantenimiento.",
 		image: "/repuestos/8-_GATA_ROJA-removebg-preview (1).png",
 	},
-];
+};
+
+/** Fallback visual for categories without an entry in categoryVisuals. */
+export const fallbackCategoryVisual: CategoryVisual = {
+	Icon: ToolIcon,
+	count: "Productos",
+	detail: "Explora todos los productos de esta categoría.",
+	image: "/repuestos/8-_GATA_ROJA-removebg-preview (1).png",
+};
 
 export const featuredProducts = [
 	{

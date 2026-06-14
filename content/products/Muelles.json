@@ -1,0 +1,11 @@
+{
+  "title": "Muelles",
+  "slug": "muelles",
+  "description": "",
+  "image": "/repuestos/1-_MUELLE_ROJO_13_HOJAS_DE_LADO-removebg-preview.png",
+  "brand": "Karbin Motors",
+  "price": 160,
+  "currency": "PEN",
+  "inStock": true,
+  "category": "content/product-categories/electrico.json"
+}

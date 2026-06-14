@@ -2,6 +2,7 @@ export { BatteryIcon } from "./BatteryIcon";
 export { BrakeIcon } from "./BrakeIcon";
 export { CartIcon } from "./CartIcon";
 export { CheckIcon } from "./CheckIcon";
+export { ChevronRightIcon } from "./ChevronRightIcon";
 export { CloseIcon } from "./CloseIcon";
 export { EngineIcon } from "./EngineIcon";
 export { FacebookIcon } from "./FacebookIcon";

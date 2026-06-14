@@ -43,3 +43,6 @@ next-env.d.ts
 # skills
 .agents/
 skills-lock.json
+node_modules
+.env
+tina/__generated__
