@@ -1,6 +1,6 @@
 export function AboutStory() {
   return (
-    <section className="mx-auto grid max-w-[1480px] gap-10 px-5 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:px-12">
+    <section className="mx-auto grid max-w-370 gap-10 px-5 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:px-12">
       <div>
         <p className="text-xs font-black uppercase tracking-[0.22em] text-red-600">
           Nuestra historia

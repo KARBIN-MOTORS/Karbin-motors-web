@@ -3,7 +3,7 @@ import { businessActivities, legalInfo } from "../constants/about";
 
 export function AboutBusinessInfo() {
   return (
-    <section className="mx-auto grid max-w-[1480px] gap-8 px-5 py-14 lg:grid-cols-[1fr_1fr] lg:px-12">
+    <section className="mx-auto grid max-w-370 gap-8 px-5 py-14 lg:grid-cols-[1fr_1fr] lg:px-12">
       <div className="rounded-md bg-neutral-950 p-7 text-white">
         <p className="text-xs font-black uppercase tracking-[0.22em] text-red-500">
           Actividades comerciales
