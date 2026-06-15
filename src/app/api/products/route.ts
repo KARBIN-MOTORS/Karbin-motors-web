@@ -1,7 +1,6 @@
 import { productAdapterToResponse } from "@/modules/products/adapters/products.adapter";
 import { isDefined } from "@/modules/shared/utils/isDefined.util";
 import client from "@/tina/__generated__/client";
-import type { ProductFilter } from "@/tina/__generated__/types";
 
 const DEFAULT_PAGE_SIZE = 12;
 
@@ -56,6 +55,13 @@ function getPageWindow<T>(
   };
 }
 
+function normalizeSearchValue(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const categorySlug = searchParams.get("categorySlug");
@@ -64,23 +70,24 @@ export async function GET(request: Request) {
   const last = getNumberParam(searchParams.get("last"));
   const after = searchParams.get("after") ?? undefined;
   const before = searchParams.get("before") ?? undefined;
+  const normalizedSearch = search ? normalizeSearchValue(search) : "";
 
-  const filter: ProductFilter = {
-    ...(search ? { title: { startsWith: search } } : {}),
-  };
-
-  const response = await client.queries.productConnection({
-    filter: Object.keys(filter).length > 0 ? filter : undefined,
-  });
+  const response = await client.queries.productConnection();
 
   const edges = (response.data.productConnection.edges ?? [])
     .filter(isDefined)
     .filter((edge) => isDefined(edge.node))
+    .filter((edge) => edge.node?.inStock === true)
     .filter(
       (edge) =>
         !categorySlug ||
         categorySlug === "all" ||
         edge.node?.category.slug === categorySlug,
+    )
+    .filter(
+      (edge) =>
+        !normalizedSearch ||
+        normalizeSearchValue(edge.node?.title ?? "").includes(normalizedSearch),
     );
   const { pageItems, pageInfo } = getPageWindow(edges, {
     first,
