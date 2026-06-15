@@ -1,13 +1,33 @@
-import type { Product } from "@/modules/shared/entities/products.entity";
-import { isDefined } from "@/modules/shared/utils/isDefined.util";
-import client from "@/tina/__generated__/client";
-import { productAdapterToResponse } from "../adapters/products.adapter";
+import type {
+  GetProductsRequest,
+  GetProductsResponse,
+} from "../interfaces/products.interface";
 
-export async function getProducts(): Promise<Product[]> {
-	const response = await client.queries.productConnection();
+export async function getProducts({
+  categorySlug = "all",
+  search,
+  first,
+  last,
+  after,
+  before,
+}: GetProductsRequest = {}): Promise<GetProductsResponse> {
+  const params = new URLSearchParams();
 
-	return (response.data.productConnection.edges ?? [])
-		.map((edge) => edge?.node)
-		.filter(isDefined)
-		.map(productAdapterToResponse);
+  if (categorySlug && categorySlug !== "all") {
+    params.set("categorySlug", categorySlug);
+  }
+
+  if (search) params.set("search", search);
+  if (first) params.set("first", String(first));
+  if (last) params.set("last", String(last));
+  if (after) params.set("after", after);
+  if (before) params.set("before", before);
+
+  const response = await fetch(`/api/products?${params.toString()}`);
+
+  if (!response.ok) {
+    throw new Error("Error al obtener productos");
+  }
+
+  return response.json();
 }

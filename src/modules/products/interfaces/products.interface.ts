@@ -1,20 +1,23 @@
 import type { Product } from "@/modules/shared/entities/products.entity";
 
 export interface GetProductsRequest {
-	first?: number;
-	after?: string;
-	last?: number;
-	before?: string;
+  categorySlug?: string;
+  search?: string;
+  first?: number;
+  last?: number;
+  after?: string;
+  before?: string;
 }
 
 export interface PageInfo {
-	hasPreviousPage: boolean;
-	hasNextPage: boolean;
-	startCursor: string;
-	endCursor: string;
+  hasPreviousPage: boolean;
+  hasNextPage: boolean;
+  startCursor: string;
+  endCursor: string;
 }
 
 export interface GetProductsResponse {
-	products: Product[];
-	pageInfo: PageInfo;
+  products: Product[];
+  pageInfo: PageInfo;
+  totalCount: number;
 }
