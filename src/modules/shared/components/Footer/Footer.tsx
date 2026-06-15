@@ -1,48 +1,22 @@
 import Link from "next/link";
-import { SiteLogo } from "@/modules/shared/components/SiteLogo";
-import { FacebookIcon, InstagramIcon } from "@/modules/shared/icons";
+import { KarbinLogo } from "@/modules/shared/components/KarbinLogo/KarbinLogo";
+import {
+	FOOTER_COLUMNS,
+	SOCIAL_LINKS,
+} from "../../constants/footer.const";
 
-const facebookHref = "https://www.facebook.com/profile.php?id=61574322585057";
-const instagramHref = "https://www.instagram.com/karbinmotors/";
-
-const footerColumns = [
-	["Enlaces rápidos", "Inicio,Nosotros,Productos,Marcas,Servicios,Contacto"],
-	["Categorías", "Motor,Frenos,Suspensión,Eléctrico,Iluminación,Accesorios"],
-	[
-		"Información",
-		"Envíos y Entregas,Políticas de Garantía,Términos y Condiciones",
-	],
-	[
-		"Contacto",
-		"+51 900 438 494,ventas@karbinmotors.com,Calle Londres 122, Ate",
-	],
-];
-
-const socialLinks = [
-	{
-		label: "Facebook",
-		href: facebookHref,
-		Icon: FacebookIcon,
-	},
-	{
-		label: "Instagram",
-		href: instagramHref,
-		Icon: InstagramIcon,
-	},
-];
-
-export function SiteFooter() {
+export function Footer() {
 	return (
 		<footer className="bg-[#080808] text-white">
-			<div className="mx-auto grid max-w-[1480px] gap-8 px-5 py-10 md:grid-cols-2 lg:grid-cols-5 lg:px-12">
+			<div className="mx-auto grid max-w-370 gap-8 px-5 py-10 md:grid-cols-2 lg:grid-cols-5 lg:px-12">
 				<div>
-					<SiteLogo inverse />
+					<KarbinLogo inverse />
 					<p className="mt-4 text-xs leading-6 text-neutral-400">
 						Repuestos de calidad para tu vehículo. Calidad, garantía y el mejor
 						precio del mercado.
 					</p>
 					<div className="mt-5 flex items-center gap-3">
-						{socialLinks.map(({ label, href, Icon }) => (
+						{SOCIAL_LINKS.map(({ label, href, Icon }) => (
 							<a
 								key={label}
 								href={href}
@@ -56,7 +30,7 @@ export function SiteFooter() {
 						))}
 					</div>
 				</div>
-				{footerColumns.map(([title, items]) => (
+				{FOOTER_COLUMNS.map(([title, items]) => (
 					<div key={title}>
 						<h3 className="text-xs font-black uppercase tracking-widest">
 							{title}

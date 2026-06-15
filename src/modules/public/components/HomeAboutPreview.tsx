@@ -13,9 +13,9 @@ export function HomeAboutPreview() {
   return (
     <section
       id="nosotros"
-      className="mx-auto grid max-w-[1480px] gap-10 px-5 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-12"
+      className="mx-auto grid max-w-370 gap-10 px-5 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-12"
     >
-      <div className="relative grid min-h-[360px] grid-cols-2 gap-4">
+      <div className="relative grid min-h-90 grid-cols-2 gap-4">
         <div className="relative overflow-hidden rounded-md bg-neutral-200">
           <Image
             src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=700&q=85"

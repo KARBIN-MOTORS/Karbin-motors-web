@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type SiteLogoProps = {
+type LogoProps = {
 	inverse?: boolean;
 };
 
-export function SiteLogo({ inverse = false }: SiteLogoProps) {
+export function KarbinLogo({ inverse = false }: LogoProps) {
 	const imageURL = inverse ? "/karbin/logo-white.png" : "/karbin/logo.png";
 
 	return (
