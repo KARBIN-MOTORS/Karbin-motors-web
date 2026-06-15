@@ -18,7 +18,7 @@ export function HomeAboutPreview() {
       <div className="relative grid min-h-90 grid-cols-2 gap-4">
         <div className="relative overflow-hidden rounded-md bg-neutral-200">
           <Image
-            src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=700&q=85"
+            src="/karbin/preview-car.avif"
             alt="Mecánico revisando un vehículo en taller"
             fill
             sizes="(min-width: 1024px) 22vw, 45vw"
@@ -27,7 +27,7 @@ export function HomeAboutPreview() {
         </div>
         <div className="relative mt-10 overflow-hidden rounded-md bg-neutral-200">
           <Image
-            src="https://images.unsplash.com/photo-1581092919535-7146ff1a590b?auto=format&fit=crop&w=600&q=80"
+            src="/karbin/preview-mechanic.avif"
             alt="Asesoría en repuestos"
             fill
             sizes="(min-width: 1024px) 22vw, 45vw"

@@ -40,7 +40,7 @@ export function AboutHero() {
 
 				<div className="relative min-h-90 overflow-hidden rounded-md bg-neutral-950 text-white shadow-2xl">
 					<Image
-						src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80"
+						src="/karbin/hero-about-us.avif"
 						alt="Repuestos automotrices Karbin Motors"
 						fill
 						sizes="(min-width: 1024px) 42vw, 90vw"
