@@ -13,7 +13,7 @@ export const productAdapterToResponse = (
 	id: product._sys.filename,
 	badge: product.badge as Product["badge"],
 	title: product.title,
-	slug: product.slug,
+	slug: product.slug ?? '',
 	image: product.image,
 	brand: product.brand,
 	price: product.price,
