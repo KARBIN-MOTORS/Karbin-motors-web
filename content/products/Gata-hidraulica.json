@@ -1,12 +1,12 @@
 {
-  "badge": "new",
-  "title": "Gata hidraulica",
-  "slug": "gata-hidraulica",
-  "description": "Esto es una gata hidraulica",
-  "image": "/repuestos/8-_GATA_ROJA-removebg-preview (1).png",
-  "brand": "Karbin Motors",
-  "price": 350,
-  "currency": "PEN",
-  "inStock": true,
-  "category": "content/product-categories/mecanico.json"
+	"badge": "new",
+	"title": "Gata hidraulica",
+	"slug": "gata-hidraulica",
+	"description": "Esto es una gata hidraulica",
+	"image": "/repuestos/GATA_HIDRAULICA.png",
+	"brand": "Karbin Motors",
+	"price": 350,
+	"currency": "PEN",
+	"inStock": true,
+	"category": "content/product-categories/mecanico.json"
 }

@@ -49,6 +49,14 @@ export default defineConfig({
 					},
 					{
 						type: "string",
+						name: "description",
+						label: "Descripción",
+						ui: {
+							component: "textarea",
+						},
+					},
+					{
+						type: "string",
 						name: "slug",
 						label: "Slug",
 						required: true,
@@ -91,7 +99,6 @@ export default defineConfig({
 						type: "string",
 						name: "slug",
 						label: "Slug",
-						required: true,
 					},
 					{
 						type: "string",
@@ -111,7 +118,6 @@ export default defineConfig({
 						type: "string",
 						name: "brand",
 						label: "Marca",
-						required: true,
 					},
 					{
 						type: "number",
