@@ -15,7 +15,7 @@ export const productAdapterToResponse = (
 	title: product.title,
 	slug: product.slug ?? '',
 	image: product.image,
-	brand: product.brand,
+	brand: product?.brand ?? '',
 	price: product.price,
 	currency: product.currency as Product["currency"],
 	inStock: product.inStock ?? false,
