@@ -43,7 +43,7 @@ export async function HomeCategories() {
 									<h3 className="mt-5 max-w-60 wrap-break-word font-display text-[1.35rem] font-black uppercase leading-none text-white sm:text-2xl">
 										{category.name}
 									</h3>
-									<p className="mt-3 max-w-[18rem] text-xs font-semibold leading-5 text-white/80">
+									<p className="mt-3 max-w-72 text-xs font-semibold leading-5 text-white/80">
 										{category.detail}
 									</p>
 								</div>

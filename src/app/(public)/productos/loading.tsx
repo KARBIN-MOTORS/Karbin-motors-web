@@ -23,7 +23,7 @@ export default function ProductosLoading() {
 							<div className="h-10 w-24 animate-pulse rounded bg-red-100" />
 						</div>
 						<div className="flex gap-2">
-							{Array.from({ length: 12 }, (_, i) => `sk-${i}`).map((id) => (
+							{Array.from({ length: 4 }, (_, i) => `sk-${i}`).map((id) => (
 								<div
 									key={id}
 									className="h-10 w-24 animate-pulse rounded border border-neutral-200 bg-neutral-100"

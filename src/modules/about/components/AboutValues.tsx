@@ -4,7 +4,7 @@ import { aboutValues } from "../constants/about";
 export function AboutValues() {
   return (
     <section className="bg-neutral-50 py-14">
-      <div className="mx-auto max-w-[1480px] px-5 lg:px-12">
+      <div className="mx-auto max-w-370 px-5 lg:px-12">
         <div className="mb-8">
           <p className="text-xs font-black uppercase tracking-[0.22em] text-red-600">
             Lo que nos representa
