@@ -21,6 +21,8 @@ export function HomeAboutPreview() {
             src="/karbin/preview-car.avif"
             alt="Mecánico revisando un vehículo en taller"
             fill
+            loading="eager"
+            quality={60}
             sizes="(min-width: 1024px) 22vw, 45vw"
             className="object-cover"
           />

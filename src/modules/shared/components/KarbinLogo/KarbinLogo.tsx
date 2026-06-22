@@ -7,14 +7,14 @@ type LogoProps = {
 
 const LOGO_ASSETS = {
   default: {
-    src: "/karbin/logo.png",
-    width: 751,
-    height: 332,
+    src: "/karbin/logo.webp",
+    width: 160,
+    height: 71,
   },
   inverse: {
-    src: "/karbin/logo-white.png",
-    width: 744,
-    height: 335,
+    src: "/karbin/logo-white.webp",
+    width: 160,
+    height: 72,
   },
 } as const;
 
@@ -33,6 +33,7 @@ export function KarbinLogo({ inverse = false }: LogoProps) {
         width={logo.width}
         height={logo.height}
         loading={inverse ? "lazy" : "eager"}
+        sizes="80px"
         className="h-auto w-20 shrink-0"
       />
       <span className="grid gap-0.5 leading-none">
@@ -43,7 +44,11 @@ export function KarbinLogo({ inverse = false }: LogoProps) {
         >
           KARBIN
         </span>
-        <span className="font-display text-[0.7rem] font-black tracking-[0.42em] text-red-600">
+        <span
+          className={`font-display text-[0.7rem] font-black tracking-[0.42em] ${
+            inverse ? "text-red-500" : "text-red-600"
+          }`}
+        >
           MOTORS
         </span>
       </span>

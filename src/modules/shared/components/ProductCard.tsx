@@ -76,7 +76,7 @@ export function ProductCard({
         ) : null}
       </div>
 
-      <p className="mt-2 flex items-center gap-1 text-xs font-bold text-emerald-600">
+      <p className="mt-2 flex items-center gap-1 text-xs font-bold text-emerald-700">
         <span className="h-2 w-2 rounded-full bg-emerald-500" />
         En stock
       </p>
