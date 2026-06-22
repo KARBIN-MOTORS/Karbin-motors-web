@@ -7,7 +7,6 @@ import { HomeCategories } from "@/modules/public/components/HomeCategories";
 import { HomeHero } from "@/modules/public/components/HomeHero";
 import { HomeServices } from "@/modules/public/components/HomeServices";
 import { localBusinessSchema } from "@/modules/public/constants/data";
-import { FloatingWhatsAppButton } from "@/modules/shared/components/FloatingWhatsAppButton/FloatingButton";
 
 export const metadata: Metadata = {
 	title: "Repuestos para Vehículos en Lima, Ate | Karbin Motors",
@@ -48,8 +47,6 @@ export default function Home() {
 			<HomeAboutPreview />
 			<HomeServices />
 			<HomeAboutCta />
-
-			<FloatingWhatsAppButton />
 		</main>
 	);
 }
