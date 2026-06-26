@@ -1,0 +1,11 @@
+{
+  "badge": "featured",
+  "title": "Corona eléctrica",
+  "slug": "corona-electrica",
+  "image": "/repuestos/CORONA_ELECTRICA.jpg",
+  "brand": "Karbin Motors",
+  "price": 0,
+  "currency": "PEN",
+  "inStock": true,
+  "category": "content/product-categories/electrico.json"
+}
