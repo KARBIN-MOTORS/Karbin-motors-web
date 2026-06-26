@@ -10,6 +10,7 @@ export async function getCategories(): Promise<Category[]> {
 		.filter(isDefined)
 		.map((node) => ({
 			name: node.name,
+			description: node.description ?? undefined,
 			slug: node.slug ?? undefined,
 		}));
 }

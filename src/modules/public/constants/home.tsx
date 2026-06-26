@@ -1,133 +1,22 @@
 import {
-	BatteryIcon,
-	BrakeIcon,
 	CheckIcon,
-	EngineIcon,
 	HeadsetIcon,
-	LightIcon,
 	ShieldIcon,
-	SuspensionIcon,
 	ToolIcon,
 	TruckIcon,
 } from "@/modules/shared/icons";
 
-export const brands = [
-	"Toyota",
-	"Hyundai",
-	"Kia",
-	"Chevrolet",
-	"Nissan",
-	"Mazda",
-	"Suzuki",
-	"Mitsubishi",
-	"Honda",
-	"Ford",
-];
-
-import type { ComponentType } from "react";
-import type { IconProps } from "@/modules/shared/icons/IconProps";
-
-export type CategoryVisual = {
-	Icon: ComponentType<IconProps>;
-	count: string;
-	detail: string;
-	image: string;
-};
-
-/**
- * Visual enrichment for each Tina category.
- * Key = category name as stored in TinaCMS (case-sensitive).
- * Add an entry here whenever a new category is created in the CMS.
- */
-export const categoryVisuals: Record<string, CategoryVisual> = {
-	"Repuestos de Motor": {
-		Icon: EngineIcon,
-		count: "320+ productos",
-		detail: "Filtros, soportes, bombas y piezas de alto desgaste.",
-		image: "/repuestos/10.-_EJE_CARDAN_COMPLETO-removebg-preview (1).png",
-	},
-	"Sistema de Frenos": {
-		Icon: BrakeIcon,
-		count: "180+ productos",
-		detail: "Bombas, zapatas, discos, pastillas y accesorios.",
-		image: "/repuestos/4-_BOMBA_DE_FRENO_POS-removebg-preview.png",
-	},
-	"Suspensión y Dirección": {
-		Icon: SuspensionIcon,
-		count: "210+ productos",
-		detail: "Muelles, bocamazas, amortiguadores y ejes.",
-		image: "/repuestos/1-_MUELLE_ROJO_13_HOJAS_DE_LADO-removebg-preview.png",
-	},
-	"Sistema Eléctrico": {
-		Icon: BatteryIcon,
-		count: "260+ productos",
-		detail: "Baterías, cargadores, ramales y tableros.",
-		image: "/repuestos/18.-CARGADOR_60V_58AH_CONEXIONES-removebg-preview.png",
-	},
-	"Iluminación y Faros": {
-		Icon: LightIcon,
-		count: "145+ productos",
-		detail: "Faros LED, posteriores, focos y conexiones.",
-		image: "/repuestos/16.-FARO CENTRAL LED PARA CARGUERO (3).png",
-	},
-	"Accesorios y Más": {
-		Icon: ToolIcon,
-		count: "95+ productos",
-		detail: "Herramientas, gatas y complementos de mantenimiento.",
-		image: "/repuestos/8-_GATA_ROJA-removebg-preview (1).png",
-	},
-};
-
-/** Fallback visual for categories without an entry in categoryVisuals. */
-export const fallbackCategoryVisual: CategoryVisual = {
-	Icon: ToolIcon,
-	count: "Productos",
-	detail: "Explora todos los productos de esta categoría.",
-	image: "/repuestos/8-_GATA_ROJA-removebg-preview (1).png",
-};
-
-export const featuredProducts = [
-	{
-		badge: "-15%",
-		name: "Disco de Freno Ventilado",
-		model: "Toyota Hilux 2016-2023",
-		price: "S/ 280.00",
-		image: "/repuestos/4-_BOMBA_DE_FRENO_POS-removebg-preview.png",
-	},
-	{
-		badge: "Nuevo",
-		name: "Amortiguador Delantero",
-		model: "Monotubo Kayaba",
-		price: "S/ 450.00",
-		image: "/repuestos/11.-_SUJETADOR_DEL_RUSTER-removebg-preview.png",
-	},
-	{
-		name: "Batería 12V 60Ah",
-		model: "Karbin Motors",
-		price: "S/ 380.00",
-		image: "/repuestos/18.-CARGADOR_60V_58AH_CONEXIONES-removebg-preview.png",
-	},
-	{
-		name: "Kit de Embrague",
-		model: "Hyundai Accent 1.6",
-		price: "S/ 320.00",
-		image:
-			"/repuestos/12.-_CORONA_CENTRAL_CON_RUSTER_1035-removebg-preview.png",
-	},
-	{
-		badge: "-10%",
-		name: "Faro Delantero LED",
-		model: "Hilux Revo 2021+",
-		price: "S/ 1,250.00",
-		image: "/repuestos/16.-FARO CENTRAL LED PARA CARGUERO (1).png",
-	},
-	{
-		badge: "-10%",
-		name: "Faro Delantero LED 2",
-		model: "Hilux Revo 2021+",
-		price: "S/ 1,250.00",
-		image: "/repuestos/16.-FARO CENTRAL LED PARA CARGUERO (1).png",
-	},
+export const solutions = [
+	"Motor",
+	"Frenos",
+	"Suspensión",
+	"Eléctricos",
+	"Iluminación",
+	"Accesorios",
+	"Baterías",
+	"Cargadores",
+	"Stock local",
+	"Asesoría",
 ];
 
 export const trustItems = [

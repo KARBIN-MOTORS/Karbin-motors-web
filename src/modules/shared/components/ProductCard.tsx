@@ -12,6 +12,12 @@ export type ProductCardProps = {
   priority?: boolean;
 };
 
+const badgeLabels: Record<string, string> = {
+  featured: "Destacado",
+  new: "Nuevo",
+  last_units: "Ultimas unidades",
+};
+
 export function ProductCard({
   name,
   imageSrc,
@@ -23,15 +29,16 @@ export function ProductCard({
   compact = false,
   priority = false,
 }: ProductCardProps) {
+  const badgeLabel = badge ? (badgeLabels[badge] ?? badge) : undefined;
   const quoteHref = `https://wa.me/51900438494?text=${encodeURIComponent(
     `Hola Karbin Motors, solicito cotización y stock del repuesto: ${name}`,
   )}`;
 
   return (
     <article className="group relative flex h-full flex-col rounded-md border border-neutral-200 bg-white p-4 shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:border-red-600 hover:shadow-[0_16px_42px_rgba(220,38,38,0.14)]">
-      {badge ? (
+      {badgeLabel ? (
         <span className="absolute left-4 top-4 z-10 rounded-full bg-red-600 px-3 py-1 text-[0.68rem] font-black uppercase text-white">
-          {badge}
+          {badgeLabel}
         </span>
       ) : null}
 

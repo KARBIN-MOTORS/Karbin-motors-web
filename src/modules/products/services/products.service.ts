@@ -5,6 +5,7 @@ import type {
 
 export async function getProducts({
   categorySlug = "all",
+  badge,
   search,
   first,
   last,
@@ -18,6 +19,7 @@ export async function getProducts({
   }
 
   if (search) params.set("search", search);
+  if (badge) params.set("badge", badge);
   if (first) params.set("first", String(first));
   if (last) params.set("last", String(last));
   if (after) params.set("after", after);

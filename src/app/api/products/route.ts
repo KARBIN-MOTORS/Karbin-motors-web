@@ -65,6 +65,7 @@ function normalizeSearchValue(value: string): string {
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const categorySlug = searchParams.get("categorySlug");
+  const badge = searchParams.get("badge");
   const search = searchParams.get("search")?.trim();
   const first = getNumberParam(searchParams.get("first"));
   const last = getNumberParam(searchParams.get("last"));
@@ -84,6 +85,7 @@ export async function GET(request: Request) {
         categorySlug === "all" ||
         edge.node?.category.slug === categorySlug,
     )
+    .filter((edge) => !badge || edge.node?.badge === badge)
     .filter(
       (edge) =>
         !normalizedSearch ||

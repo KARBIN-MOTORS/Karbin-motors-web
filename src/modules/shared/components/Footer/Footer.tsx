@@ -27,17 +27,29 @@ export function Footer() {
             ))}
           </div>
         </div>
-        {FOOTER_COLUMNS.map(([title, items]) => (
+        {FOOTER_COLUMNS.map(({ title, items }) => (
           <div key={title}>
             <h3 className="text-xs font-black uppercase tracking-widest">
               {title}
             </h3>
             <div className="mt-4 grid gap-2 text-xs font-semibold text-neutral-400">
-              {items.split(",").map((item) => (
-                <Link key={item} href="/" className="hover:text-red-500">
-                  {item}
-                </Link>
-              ))}
+              {items.map(({ label, href, external }) =>
+                href.startsWith("/") ? (
+                  <Link key={label} href={href} className="hover:text-red-500">
+                    {label}
+                  </Link>
+                ) : (
+                  <a
+                    key={label}
+                    href={href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noreferrer" : undefined}
+                    className="hover:text-red-500"
+                  >
+                    {label}
+                  </a>
+                ),
+              )}
             </div>
           </div>
         ))}

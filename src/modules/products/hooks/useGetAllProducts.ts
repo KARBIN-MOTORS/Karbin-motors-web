@@ -13,12 +13,13 @@ type CursorState = {
 export function useGetAllProducts({
   first = PAGE_SIZE,
   categorySlug = "all",
+  badge,
   search = "",
 }: GetProductsRequest = {}) {
   const [cursor, setCursor] = useState<CursorState>({});
 
   const productsQuery = useQuery({
-    queryKey: ["products", first, categorySlug, search, cursor],
+    queryKey: ["products", first, categorySlug, badge, search, cursor],
     queryFn: () =>
       getProducts({
         first: cursor.before ? undefined : first,
@@ -26,6 +27,7 @@ export function useGetAllProducts({
         after: cursor.after,
         before: cursor.before,
         categorySlug,
+        badge,
         search,
       }),
   });

@@ -2,6 +2,7 @@ import type { Product } from "@/modules/shared/entities/products.entity";
 
 export interface GetProductsRequest {
   categorySlug?: string;
+  badge?: string;
   search?: string;
   first?: number;
   last?: number;
