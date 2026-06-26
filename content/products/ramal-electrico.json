@@ -1,0 +1,10 @@
+{
+  "title": "Ramal eléctrico",
+  "slug": "ramal-electrico",
+  "image": "/repuestos/RAMAL_ELECTRICO.jpg",
+  "brand": "Karbin Motors",
+  "price": 0,
+  "currency": "PEN",
+  "inStock": true,
+  "category": "content/product-categories/electrico.json"
+}
