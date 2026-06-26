@@ -1,0 +1,10 @@
+{
+  "title": "Acelerador eléctrico",
+  "slug": "acelerador-electrico",
+  "image": "/repuestos/ACELERADOR_ELECTRICO.jpg",
+  "brand": "Karbin Motors",
+  "price": 0,
+  "currency": "PEN",
+  "inStock": true,
+  "category": "content/product-categories/electrico.json"
+}
