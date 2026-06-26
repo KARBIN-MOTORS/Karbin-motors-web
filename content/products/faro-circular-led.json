@@ -1,0 +1,10 @@
+{
+  "title": "Faro circular led",
+  "slug": "faro-circular-led",
+  "image": "/repuestos/FARO_LED_CIRCULAR.jpg",
+  "brand": "Karbin Motors",
+  "price": 0,
+  "currency": "PEN",
+  "inStock": true,
+  "category": "content/product-categories/electrico.json"
+}
