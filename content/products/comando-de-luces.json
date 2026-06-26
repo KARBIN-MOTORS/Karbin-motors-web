@@ -1,0 +1,10 @@
+{
+  "title": "Comando de luces",
+  "slug": "comando-de-luces",
+  "image": "/repuestos/COMANDO_DE_LUCES.jpg",
+  "brand": "Karbin Motors",
+  "price": 0,
+  "currency": "PEN",
+  "inStock": true,
+  "category": "content/product-categories/electrico.json"
+}
