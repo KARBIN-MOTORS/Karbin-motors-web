@@ -3,13 +3,14 @@ import Image from "next/image";
 export type ProductCardProps = {
   name: string;
   imageSrc: string;
-  model?: string;
+  brand?: string;
   category?: string;
   price?: string;
   oldPrice?: string;
   badge?: string;
   compact?: boolean;
   priority?: boolean;
+  description?: string;
 };
 
 const badgeLabels: Record<string, string> = {
@@ -21,13 +22,12 @@ const badgeLabels: Record<string, string> = {
 export function ProductCard({
   name,
   imageSrc,
-  model,
+  brand,
   category,
-  price,
-  oldPrice,
   badge,
   compact = false,
   priority = false,
+  description,
 }: ProductCardProps) {
   const badgeLabel = badge ? (badgeLabels[badge] ?? badge) : undefined;
   const quoteHref = `https://wa.me/51900438494?text=${encodeURIComponent(
@@ -68,20 +68,9 @@ export function ProductCard({
       <h3 className="mt-3 line-clamp-2 text-sm font-black text-neutral-950">
         {name}
       </h3>
-      {model ? (
-        <p className="mt-1 text-xs font-semibold text-neutral-500">{model}</p>
+      {brand ? (
+        <p className="mt-1 text-xs font-semibold text-neutral-500">{brand}</p>
       ) : null}
-
-      <div className="mt-3 flex items-end gap-2">
-        <span className="text-lg font-black text-red-600">
-          {price ?? "Consultar"}
-        </span>
-        {oldPrice ? (
-          <span className="text-xs font-bold text-neutral-400 line-through">
-            {oldPrice}
-          </span>
-        ) : null}
-      </div>
 
       <p className="mt-2 flex items-center gap-1 text-xs font-bold text-emerald-700">
         <span className="h-2 w-2 rounded-full bg-emerald-500" />

@@ -39,7 +39,7 @@ export function HomeAboutPreview() {
         <div className="absolute bottom-6 left-1/2 rounded-md bg-red-600 px-7 py-5 text-white shadow-2xl">
           <p className="font-display text-5xl font-black leading-none">+1</p>
           <p className="mt-1 text-xs font-black uppercase">
-            Años de experiencia
+            Año de experiencia
           </p>
         </div>
       </div>
