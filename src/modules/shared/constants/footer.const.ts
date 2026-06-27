@@ -48,8 +48,8 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     items: [
       { label: "+51 900 438 494", href: WHATSAPP_HREF, external: true },
       {
-        label: "ventas@karbinmotors.com",
-        href: "mailto:ventas@karbinmotors.com",
+        label: "karbinmotors@gmail.com",
+        href: "mailto:karbinmotors@gmail.com",
       },
       {
         label: "Calle Londres 122, Ate",
