@@ -1,11 +1,24 @@
 import type { Metadata } from "next";
 import { ProductGallery } from "@/modules/products/components/ProductGallery";
 import { getCategories } from "@/modules/products/services/categories.service";
+import { SITE_NAME } from "@/modules/shared/constants/site.const";
 
 export const metadata: Metadata = {
-	title: "Catálogo de Repuestos | Karbin Motors",
+	title: "Catálogo de Repuestos",
 	description:
 		"Explora el catálogo completo de repuestos, componentes eléctricos y piezas mecánicas disponibles en Karbin Motors.",
+	alternates: {
+		canonical: "/productos",
+	},
+	openGraph: {
+		title: "Catálogo de Repuestos | Karbin Motors",
+		description:
+			"Repuestos eléctricos, gasolineros y accesorios disponibles para cotizar por WhatsApp.",
+		url: "/productos",
+		siteName: SITE_NAME,
+		locale: "es_PE",
+		type: "website",
+	},
 };
 
 type ProductosPageProps = {
@@ -28,7 +41,7 @@ export default async function ProductosPage({
 						Catálogo Karbin Motors
 					</p>
 					<h1 className="mt-4 max-w-3xl font-display text-5xl font-black uppercase leading-[0.92] tracking-tight text-neutral-950 sm:text-6xl">
-						Nuestros de repuestos
+						Nuestros repuestos
 					</h1>
 					<p className="mt-6 max-w-2xl text-base font-semibold leading-7 text-neutral-600">
 						Consulta repuestos mecánicos, eléctricos y accesorios disponibles.

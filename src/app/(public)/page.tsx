@@ -7,9 +7,10 @@ import { HomeCategories } from "@/modules/public/components/HomeCategories";
 import { HomeHero } from "@/modules/public/components/HomeHero";
 import { HomeServices } from "@/modules/public/components/HomeServices";
 import { localBusinessSchema } from "@/modules/public/constants/data";
+import { SITE_NAME, SITE_URL } from "@/modules/shared/constants/site.const";
 
 export const metadata: Metadata = {
-	title: "Repuestos para Vehículos en Lima, Ate | Karbin Motors",
+	title: "Repuestos para Vehículos en Lima, Ate",
 	description:
 		"Repuestos para vehículos en Lima. Karbin Motors ofrece luces LED, frenos, cargadores, tableros y accesorios con atención por WhatsApp desde Ate.",
 	keywords: [
@@ -18,12 +19,15 @@ export const metadata: Metadata = {
 		"accesorios para vehículos Lima",
 		"Karbin Motors Ate",
 	],
+	alternates: {
+		canonical: "/",
+	},
 	openGraph: {
 		title: "Repuestos para Vehículos en Lima, Ate | Karbin Motors",
 		description:
 			"Stock de repuestos, accesorios y componentes para vehículos de trabajo. Consulta disponibilidad y compatibilidad desde Ate.",
-		url: "https://karbinmotors.pe",
-		siteName: "Karbin Motors",
+		url: SITE_URL,
+		siteName: SITE_NAME,
 		locale: "es_PE",
 		type: "website",
 	},
